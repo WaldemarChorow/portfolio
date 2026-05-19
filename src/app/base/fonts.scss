@@ -1,0 +1,21 @@
+@mixin h1 {
+  font-family: 'Anta', sans-serif;
+  font-weight: 400;
+  color: #fff;
+  font-size: 88px;
+  margin: 20px 0;
+}
+
+@mixin h2 {
+  font-family: 'Anta', sans-serif;
+  font-weight: 400;
+  color: #fff;
+  font-size: 88px;
+}
+@mixin h2 {
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 100;
+  color: #fff;
+  font-size: 40px;
+  margin: 20px 0;
+}

@@ -1,0 +1,81 @@
+@import '../../abstract/mixins.scss';
+@import '../../base/fonts.scss';
+
+header{
+    @include flex-center-column;
+    max-width: 1920px;
+    height: 100vh;
+    margin: 0 auto;
+}
+
+.hero-section{
+    display: flex;
+    gap: 5px;
+    align-items: flex-start;
+    justify-content: center;
+    width: 100%;
+    max-width: 1200px;
+
+}
+
+.foto-section{
+    width: 594px;
+    height: 710px;
+    background: url(/assets/images/shape.svg) no-repeat center center;
+    background-size: contain;
+    background-size: 580px 616px;
+    transform: rotate(-45deg);
+    margin: 0;
+    padding: 0;
+
+    &:hover {
+        background: url(/assets/images/shape-hover.svg) no-repeat center center;
+    }
+}
+
+.headline-section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-link-section{
+    @include flex-center-row;
+    align-items: flex-end;
+    gap: 150px;
+    img {
+        width: 80px;
+    }
+}
+
+.links-section{
+    @include flex-center-column;
+    gap: 20px;
+    img {
+        width: 30px;
+    }
+    a {
+        color: #fff;
+        font-size: 1.2rem;
+        text-decoration: none;
+        transition: color 0.3s ease;
+
+        &:hover {
+            color: #ff6347;
+        }
+    }
+}
+
+.name-section{
+    text-align: center;
+}
+
+h1{
+    @include h1;
+}
+
+h2{
+   @include h2;
+}
