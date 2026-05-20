@@ -1,0 +1,83 @@
+@import '../../abstract/mixins.scss';
+@import '../../base/fonts.scss';
+
+nav {
+    position: sticky;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 104px;
+    width: 100%;
+    background-color: #89BCD9;
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+
+    ul {
+        width: 677px;
+        height: 26px;
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        padding: 10px 0;
+        margin: 0;
+        list-style: none;
+
+        li {
+            a {
+                text-decoration: none;
+                color: #262E34;
+                font-weight: bold;
+                transition: color 0.3s ease;
+                font-family: Josefin Sans, sans-serif;
+                font-weight: 500;
+                font-size: 26px;
+
+                &:hover {
+                    color: #007BFF;
+                }
+            }
+        }
+    }
+}
+
+.logo {
+    width: 80px;
+    height: 80px;
+    background-image: url(/assets/images/logo-default.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.language-choice {
+    @include flex-center-center;
+    gap: 25px;
+    
+}   
+
+.language-option {
+    width: 36.8px;
+    height: 32px;
+    @include flex-center-center;
+    text-decoration: none;
+    color: #262E34;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    font-family: Josefin Sans, sans-serif;
+    font-weight: 500;
+    font-size: 18px;   
+    cursor: pointer;
+
+
+    &:hover {
+            background-image: url(/assets/images/bh-language.svg);
+            width: 36.8px;
+            height: 32px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center center;
+            color: white;
+        }
+}
+
