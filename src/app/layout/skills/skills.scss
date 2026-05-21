@@ -1,0 +1,61 @@
+@import '../../abstract/mixins.scss';
+@import '../../base/fonts.scss';
+
+.mySkillsSection {
+    width: 100%;
+    @include flex-center-column;
+    @include margin-top-bottom;
+}
+
+.mySkillsSection-wrapper {
+    width: 100%;
+    @include flex-center-column;
+    max-width: 860px;
+    
+}
+
+h2 {
+    @include h2;
+}
+
+.skillsContent {
+    width: 100%;
+    display: flex;
+    gap: 10px;
+}
+
+.skillsImages{
+    width: 410px;
+    height: 405px;
+    @include flex-center-center;
+    align-items: flex-start;
+    gap: 10px;
+
+    img {
+        width: 75px;
+        height: 75px;
+    }
+}
+
+.skillsText {
+        width: 380;
+        height: 380px;
+        background-image: url(/assets/images/shape-learning-default.svg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+
+        &:hover{
+            background-image: url(/assets/images/shape-learning-hover.svg);
+        }
+    p {
+        font-family: Josefin Sans, sans-serif;
+        font-weight: 400;
+        color: #fff;
+        width: 100%;
+        font-size: 16px;
+        margin: 0;
+    }
+}
+
+
