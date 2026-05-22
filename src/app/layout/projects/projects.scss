@@ -1,0 +1,153 @@
+@import '../../abstract/mixins.scss';
+@import '../../base/fonts.scss';
+
+.projectsSection {
+    width: 100%;
+    @include flex-center-column;
+}
+
+.projectsSection-wrapper {
+    width: 100%;
+    max-width: 1440px;
+    @include flex-center-column;
+}
+
+h2 {
+    @include h2;
+}
+
+.projectTabs {
+    display: flex;
+    max-width: 980px;
+    height: 100px;
+    width: 100%;
+}
+
+.tabBtn {
+    width: 250px;
+    height: 100px;
+    background: none;
+    border: none;
+    color: #89BCD9;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 30px;
+    font-weight: 500;
+    cursor: pointer;
+    border-radius: 30px 30px 0 0;
+    transition: background-color 0.3s ease;
+
+    &.active {
+        background-color: #2D383F;
+        color: #fff;
+    }
+
+    &:hover:not(.active) {
+
+        color: #fff;
+    }
+}
+
+.projectContent {
+    display: flex;
+    gap: 40px;
+    width: 100%;
+    background-color: #2D383F;
+    padding-bottom: 30px;
+    padding-top: 30px;
+}
+
+.projectInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    flex: 1;
+}
+
+.infoBlock {
+    display: flex;
+    gap: 15px;
+    align-items: flex-start;
+}
+
+.dot {
+    width: 26px;
+    height: 26px;
+    
+}
+
+.infoBlock h3 {
+    @include h3;
+    margin: 0 0 8px 0;
+}
+
+.duration {
+    font-size: 18px;
+    font-weight: 400;
+    color: #89BCD9;
+    margin-left: 10px;
+}
+
+.infoBlock p {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    color: #fff;
+    margin: 0;
+}
+
+.projectPreview {
+    @include flex-center-column;
+    gap: 15px;
+    width: 340px;
+}
+
+.technologies {
+    width: 100%;
+    text-align: center;
+
+    p {
+        font-family: 'Josefin Sans', sans-serif;
+        font-size: 18px;
+        font-weight: 400px;
+        color: #fff;
+        margin: 0 0 10px 0;
+    }
+}
+
+.techIcons {
+    @include flex-center-center;
+    gap: 25px;
+
+
+    img {
+        width: 40px;
+        height: 40px;
+        object-fit: contain;
+    }
+}
+
+.projectImage {
+    width: 100%;
+    border-radius: 12px;
+    object-fit: cover;
+}
+
+.projectButtons {
+    display: flex;
+    gap: 15px;
+}
+
+.btn {
+    padding: 12px 28px;
+    border-radius: 30px;
+    border: 2px solid #89BCD9;
+    color:  #89BCD9;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 18px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+
+    &:hover {
+        color: #252d33;
+    }
+}

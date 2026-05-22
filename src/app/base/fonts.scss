@@ -13,6 +13,14 @@
   font-size: 60px;
   margin-bottom: 80px;
 }
+
+@mixin h3{
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 400;
+  color: #F8F5EC;
+  font-size: 28px;
+}
+
 @mixin p {
   font-family: 'Josefin Sans', sans-serif;
   font-weight: 100;
