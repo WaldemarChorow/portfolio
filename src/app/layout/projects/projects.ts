@@ -62,7 +62,7 @@ export class Projects {
         { src: '/assets/icons/Javascript.svg', alt: 'JavaScript' },
         { src: '/assets/icons/HTML.svg', alt: 'HTML' },
         { src: '/assets/icons/CSS.svg', alt: 'CSS' },
-        { src: '/assets/icons/restapi.svg', alt: 'Rest API' },
+        { src: '/assets/icons/Api.svg', alt: 'Rest API' },
       ],
       liveLink: '#',
       githubLink: '#',

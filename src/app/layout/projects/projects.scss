@@ -137,7 +137,24 @@ h2 {
     gap: 15px;
 }
 
-.btn {
+.btnLive {
+    padding: 12px 28px;
+    border-radius: 30px;
+    border: 2px solid #89BCD9;
+    color:  #2D383F;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 18px;
+    text-decoration: none;
+    background-color: #89BCD9;
+
+    &:hover {
+        transition: background-color 0.3s ease, color 0.3s ease;
+        background-color: transparentize($color: #ffffff, $amount: 0.0);
+        border: 2px solid #ffffff;
+    }
+}
+
+.btnGit {
     padding: 12px 28px;
     border-radius: 30px;
     border: 2px solid #89BCD9;
@@ -148,6 +165,8 @@ h2 {
     transition: background-color 0.3s ease, color 0.3s ease;
 
     &:hover {
-        color: #252d33;
+        color: #89BCD9;
+        transition: background-color 0.3s ease, color 0.3s ease;
+        background-color: transparentize($color: #ffffff, $amount: 0.8);
     }
 }
