@@ -2,16 +2,22 @@
   <div class="mySkillsSection-wrapper">
     <h2>My Skills</h2>
     <div class="skillsContent">
-      <div class="skillsImages"></div>
+      <div class="skillsImages">
+        @for (skill of skills; track skill.alt){
+          <figure>
+            <img [src]="skill.src" [alt]="skill.alt">
+            <figcaption>{{ skill.alt }}</figcaption>
+          </figure>
+        }
+      </div>
       <div class="skillsText">
         <p>I am currently learning</p>
         <div class="learningSkill-images">
-          <div class="learSkill1"></div>
-          <img src="" alt="" />
-          <p>React</p>
+          <div class="learSkill1">
+            <img src="/assets/icons/react.svg" alt="React" />
+          </div>
           <div class="learSkill2">
-            <img src="" alt="" />
-            <p>Vue:js</p>
+            <img src="/assets/icons/vue.svg" alt="Vue" />
           </div>
         </div>
       </div>

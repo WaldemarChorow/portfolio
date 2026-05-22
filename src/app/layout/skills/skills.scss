@@ -21,29 +21,51 @@ h2 {
 .skillsContent {
     width: 100%;
     display: flex;
-    gap: 10px;
+    gap: 50px;
 }
 
 .skillsImages{
-    width: 410px;
-    height: 405px;
-    @include flex-center-center;
+    width: 455px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
     align-items: flex-start;
-    gap: 10px;
+    gap: 40px;
+
+    figure {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+        margin: 0;
+        width: 80px;
+    }
 
     img {
-        width: 75px;
-        height: 75px;
+        width: 60px;
+        height: 60px;
+        object-fit: contain;
+    }
+
+    figcaption {
+        font-family: 'Josefin Sans', sans-serif;
+        font-weight: 400;
+        font-size: 18px;
+        color: #89BCD9;
+        text-align: center;
     }
 }
 
 .skillsText {
-        width: 380;
+        width: 380px;
         height: 380px;
+        @include flex-center-column;
+        text-align: center;
         background-image: url(/assets/images/shape-learning-default.svg);
         background-position: center;
         background-repeat: no-repeat;
         background-size: contain;
+        gap: 15px;
 
         &:hover{
             background-image: url(/assets/images/shape-learning-hover.svg);
@@ -56,6 +78,11 @@ h2 {
         font-size: 16px;
         margin: 0;
     }
+}
+
+.learningSkill-images{
+    display: flex;
+    gap: 15px;
 }
 
 
