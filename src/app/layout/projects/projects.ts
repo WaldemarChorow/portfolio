@@ -33,9 +33,9 @@ export class Projects {
         { src: '/assets/icons/HTML.svg', alt: 'HTML' },
         { src: '/assets/icons/CSS.svg', alt: 'CSS' },
       ],
-      liveLink: '#',
-      githubLink: '#',
-      image: '/assets/images/projects/el-polo-loco.png',
+      liveLink: 'https://waldemarchorow.developerakademie.net/projekte/elpololoco/index.html',
+      githubLink: 'https://github.com/WaldemarChorow/elpololoco.git',
+      image: '/assets/images/projects/elpololoco.png',
     },
     {
       name: 'Join',
@@ -50,7 +50,7 @@ export class Projects {
       ],
       liveLink: '#',
       githubLink: '#',
-      image: '/assets/images/projects/join.png',
+      image: '/assets/images/projects/join.svg',
     },
     {
       name: 'Pokédex',
@@ -64,8 +64,8 @@ export class Projects {
         { src: '/assets/icons/CSS.svg', alt: 'CSS' },
         { src: '/assets/icons/Api.svg', alt: 'Rest API' },
       ],
-      liveLink: '#',
-      githubLink: '#',
+      liveLink: 'https://waldemarchorow.developerakademie.net/projekte/pokedex/index.html',
+      githubLink: 'https://github.com/WaldemarChorow/pokedex.git',
       image: '/assets/images/projects/pokedex.png',
     },
   ];

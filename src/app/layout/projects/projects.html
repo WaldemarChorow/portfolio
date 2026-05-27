@@ -1,7 +1,6 @@
 <section class="projectsSection">
   <div class="projectsSection-wrapper">
     <h2>My Projects</h2>
-
     <div class="projectTabs">
       @for (project of projects; track project.name; let i = $index) {
         <button class="tabBtn" [class.active]="activeIndex === i" (click)="setActive(i)">
@@ -10,41 +9,49 @@
       }
     </div>
 
+  </div>
+
+  <div class="projectContent-wrapper">
     <div class="projectContent">
       <div class="projectInfo">
         <div class="infoBlock">
-          <span class="dot"></span>
+          <img class="dot" src="/assets/icons/projekts-dot.svg" alt="" />
           <div>
-            <h3>About the project <span class="duration">{{ projects[activeIndex].duration }}</span></h3>
+            <h3>
+              About the project <span class="duration">{{ projects[activeIndex].duration }}</span>
+            </h3>
             <p>{{ projects[activeIndex].about }}</p>
           </div>
         </div>
         <div class="infoBlock">
-          <span class="dot"></span>
+          <img class="dot" src="/assets/icons/projekts-dot.svg" alt="" />
           <div>
             <h3>How I have organised my work process</h3>
             <p>{{ projects[activeIndex].workProcess }}</p>
           </div>
         </div>
         <div class="infoBlock">
-          <span class="dot"></span>
+          <img class="dot" src="/assets/icons/projekts-dot.svg" alt="" />
           <div>
             <h3>My group work experience</h3>
             <p>{{ projects[activeIndex].groupWork }}</p>
           </div>
         </div>
       </div>
-
       <div class="projectPreview">
         <div class="technologies">
           <p>Technologies</p>
           <div class="techIcons">
             @for (tech of projects[activeIndex].technologies; track tech.alt) {
-              <img [src]="tech.src" [alt]="tech.alt">
+              <img [src]="tech.src" [alt]="tech.alt" />
             }
           </div>
         </div>
-        <img class="projectImage" [src]="projects[activeIndex].image" [alt]="projects[activeIndex].name">
+        <img
+          class="projectImage"
+          [src]="projects[activeIndex].image"
+          [alt]="projects[activeIndex].name"
+        />
         <div class="projectButtons">
           <a [href]="projects[activeIndex].liveLink" class="btnLive" target="_blank">Live Test</a>
           <a [href]="projects[activeIndex].githubLink" class="btnGit" target="_blank">GitHub</a>
@@ -52,4 +59,5 @@
       </div>
     </div>
   </div>
+
 </section>

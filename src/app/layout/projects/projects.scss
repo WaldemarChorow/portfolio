@@ -18,7 +18,7 @@ h2 {
 
 .projectTabs {
     display: flex;
-    max-width: 980px;
+    max-width: 1200px;
     height: 100px;
     width: 100%;
 }
@@ -47,20 +47,31 @@ h2 {
     }
 }
 
+.projectContent-wrapper {
+    width: 100%;
+    background-color: #2D383F;
+    display: flex;
+    justify-content: center;
+}
+
 .projectContent {
     display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
     gap: 40px;
     width: 100%;
+    max-width: 1200px;
     background-color: #2D383F;
     padding-bottom: 30px;
     padding-top: 30px;
+    
 }
 
 .projectInfo {
     display: flex;
     flex-direction: column;
+    width: 600px;
     gap: 30px;
-    flex: 1;
 }
 
 .infoBlock {
@@ -70,9 +81,10 @@ h2 {
 }
 
 .dot {
-    width: 26px;
-    height: 26px;
-    
+  width: 26px;
+  height: 26px;
+  min-width: 26px;
+  margin-right: 10px;
 }
 
 .infoBlock h3 {
@@ -98,7 +110,7 @@ h2 {
 .projectPreview {
     @include flex-center-column;
     gap: 15px;
-    width: 340px;
+    width: 460px;
 }
 
 .technologies {
@@ -108,7 +120,7 @@ h2 {
     p {
         font-family: 'Josefin Sans', sans-serif;
         font-size: 18px;
-        font-weight: 400px;
+        font-weight: 400;
         color: #fff;
         margin: 0 0 10px 0;
     }
@@ -127,14 +139,16 @@ h2 {
 }
 
 .projectImage {
-    width: 100%;
-    border-radius: 12px;
+    width: 450px;
+    height: 310px;
+    border-radius: 30px;
     object-fit: cover;
 }
 
 .projectButtons {
     display: flex;
-    gap: 15px;
+    gap: 40px;
+    margin-top: 15px;
 }
 
 .btnLive {
