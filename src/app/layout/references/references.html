@@ -1,0 +1,17 @@
+<section class="reference-MainSection">
+  <div class="ref-sec-wrapper">
+    <h4>Need a teamplayer? Here’s what my colleagues say about me</h4>
+    <div class="references-content">
+      @for (reference of references; track reference.name) {
+        <div class="reference-single">
+          <h3>{{ reference.name }}</h3>
+          <p>
+            Project<span> {{ reference.project }}</span>
+          </p>
+          <p class="reference-text">{{ reference.text }}</p>
+          <a [href]="reference.linkedInLink">LinkedIn</a>
+        </div>
+      }
+    </div>
+  </div>
+</section>

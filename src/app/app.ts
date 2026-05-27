@@ -6,10 +6,11 @@ import { AboutMe } from './layout/about-me/about-me';
 import { Skills } from './layout/skills/skills';
 import { Projects } from './layout/projects/projects';
 import { Contact } from './layout/contact/contact';
+import { References } from './layout/references/references';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Header, Navbar, AboutMe, Skills, Projects, Contact],
+  imports: [RouterOutlet, Header, Navbar, AboutMe, Skills, Projects, Contact, References],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })

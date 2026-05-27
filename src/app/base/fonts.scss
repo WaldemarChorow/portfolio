@@ -21,6 +21,13 @@
   font-size: 28px;
 }
 
+@mixin h4{
+  color: #89BCD9;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 32px;
+    font-weight: 400;
+}
+
 @mixin p {
   font-family: 'Josefin Sans', sans-serif;
   font-weight: 100;

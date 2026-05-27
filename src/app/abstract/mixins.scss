@@ -5,12 +5,6 @@
   align-items: center;
 }
 
-@mixin flex-center-row {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 @mixin flex-center-center {
   display: flex;
   justify-content: center;
