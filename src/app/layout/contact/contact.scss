@@ -1,0 +1,218 @@
+@import '../../abstract/mixins.scss';
+@import '../../base/fonts.scss';
+
+.contact-section {
+    width: 100%;
+    @include flex-center-column;
+}
+
+.contact-wrapper {
+    width: 100%;
+    @include flex-center-column;
+}
+
+
+h2 {
+    @include h2;
+}
+
+.contact-content {
+    @include flex-center-center;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 910px;
+    gap: 20px;
+}
+
+.contact-text {
+    width: 430px;
+    text-align: start;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 400;
+    color: #F8F5EC;
+    font-size: 18px;
+    padding: 0;
+    margin: 0;
+}
+
+.contact-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contact-email,
+.contact-tel {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.contact-email:hover a {
+    color: #5f8295;
+}
+
+.contact-email:hover .email-icon {
+    background-image: url(/assets/icons/email-icon-hover.svg);
+}
+
+.contact-email:active a {
+    color: #89BCD9;
+    ;
+}
+
+.contact-email:active .email-icon {
+    background-image: url(/assets/icons/email-icon-hover.svg);
+}
+
+.contact-tel:hover a {
+    color: #89BCD9;
+}
+
+.contact-tel:hover .tel-icon {
+    background-image: url(/assets/icons/tel-icon-hover.svg);
+}
+
+.email-icon,
+.tel-icon {
+    width: 21px;
+    height: 20px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.email-icon {
+    background-image: url(/assets/icons/email-icon-default.svg);
+}
+
+.tel-icon {
+    background-image: url(/assets/icons/tel-icon-default.svg);
+}
+
+
+
+a {
+    text-decoration: none;
+    text-align: start;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 400;
+    color: #F8F5EC;
+    font-size: 18px;
+    padding: 0;
+    margin: 0;
+}
+
+.contact-form {
+    @include flex-center-center;
+    width: 100%;
+}
+
+.contact-inputNameEmail {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+
+.inputFieldName,
+.inputFieldEmail {
+    width: 390px;
+    height: 60px;
+    border: 1px solid #89BCD9;
+    border-radius: 30px;
+    background-color: #262e34;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 400;
+    color: #F8F5EC;
+    font-size: 18px;
+    padding-left: 25px;
+    padding-right: 25px;
+
+    &:hover {
+        background-color: #89BCD91F;
+    }
+    &:active,
+    &:focus {
+        background-color: #89BCD91F;
+        outline: none;
+    }
+
+}
+
+.inputFieldText {
+    width: 860px;
+    height: 146px;
+    border: 1px solid #89BCD9;
+    border-radius: 30px;
+    background-color: #262e34;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 400;
+    color: #F8F5EC;
+    font-size: 18px;
+    padding: 0;
+    padding-top: 15px;
+    padding-left: 25px;
+    padding-right: 25px;
+    resize: vertical;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: pre-wrap;
+
+    &:hover {
+        background-color: #89BCD91F;
+    }
+    &:active,
+    &:focus {
+        background-color: #89BCD91F;
+        outline: none;
+    }
+
+    &.success {
+        background-color: #262e34;
+        padding-right: 50px;
+        background-image: url(/assets/icons/hacken.svg);
+        background-repeat: no-repeat;
+        background-position: right 25px top 15px;
+        background-size: 18px 16px;
+    }
+
+    &.error {
+        border-color: #E44C36;
+        background-color: #262e34;
+    }
+}
+
+.inputFieldName.success,
+.inputFieldEmail.success {
+    background-image: url(/assets/icons/hacken.svg);
+    background-repeat: no-repeat;
+    background-position: right 25px center;
+    background-size: 18px 16px;
+    padding-right: 50px;
+}
+
+.inputFieldName.error,
+.inputFieldEmail.error,
+.inputFieldText.error {
+    border-color: #E44C36;
+}
+
+.inputFieldName.error + p,
+.inputFieldEmail.error + p,
+.inputFieldText.error + p {
+    color: #E44C36;
+}
+
+p {
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 400;
+    color: #89BCD9;
+    font-size: 14px;
+    padding: 0;
+    margin: 0;
+    padding-left: 25px;
+}

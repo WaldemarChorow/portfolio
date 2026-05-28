@@ -5,10 +5,9 @@
 .reference-MainSection {
     width: 100%;
     @include flex-center-center;
-    @include margin-top-bottom;
 }
 
-.ref-sec-wrapper{
+.ref-sec-wrapper {
     width: 100%;
     max-width: 1440px;
     @include flex-center-column;
@@ -24,12 +23,28 @@ h4 {
     gap: 20px;
     overflow-x: auto;
     width: 100%;
-    max-width: 1250px;
+    max-width: 1300px;
     padding-bottom: 10px;
 
-    .reference-single{
+    .reference-single {
         flex-shrink: 0;
     }
+
+    &:hover {
+        &::-webkit-scrollbar {
+            height: 6px;
+        }
+
+        &::-webkit-scrollbar-track {
+            background: #2D383F;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background: #89BCD9;
+            border-radius: 10px;
+        }
+    }
+
 }
 
 .reference-single {

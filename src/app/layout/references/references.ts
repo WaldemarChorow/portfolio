@@ -9,12 +9,9 @@ import { Reference } from './reference.interface';
 })
 export class References {
   references: Reference[] = [
-    { name: 'Björn', project: 'Bestell App', text: 'dfsdfsdfsdfsdf', linkedInLink: '' },
-
-    { name: 'Björn', project: 'Bestell App', text: 'dfsdfsdfsdfsdf', linkedInLink: '' },
-
-    { name: 'Björn', project: 'Bestell App', text: 'dfsdfsdfsdfsdf', linkedInLink: '' },
-
-    { name: 'Björn', project: 'Bestell App', text: 'dfsdfsdfsdfsdf', linkedInLink: '' },
+    { id: 1, name: 'Björn', project: 'Bestell App', text: 'dfsdfsdfsdfsdf', linkedInLink: '' },
+    { id: 2, name: 'Björn', project: 'Bestell App', text: 'dfsdfsdfsdfsdf', linkedInLink: '' },
+    { id: 3, name: 'Björn', project: 'Bestell App', text: 'dfsdfsdfsdfsdf', linkedInLink: '' },
+    { id: 4, name: 'Björn', project: 'Bestell App', text: 'dfsdfsdfsdfsdf', linkedInLink: '' },
   ];
 }
