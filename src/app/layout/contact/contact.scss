@@ -8,7 +8,9 @@
 
 .contact-wrapper {
     width: 100%;
+    max-width: 911px;
     @include flex-center-column;
+    margin-bottom: 80px;
 }
 
 
@@ -215,4 +217,64 @@ p {
     padding: 0;
     margin: 0;
     padding-left: 25px;
+}
+
+.contact-privacyChoice{
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items:center ;
+    margin: 0;
+    padding: 0;
+
+    p{
+        color: #F8F5EC;
+        padding-left: 5px;
+    }
+
+    span{
+        color: #89BCD9;
+    }
+}
+
+.contact-privacyChoiceIcon{
+    width: 24px;
+    height: 24px;
+    background-image: url(/assets/icons/choicircle-default.svg);
+    margin: 0;
+    padding: 0;
+
+    &:hover{
+    background-image: url(/assets/icons/choicircle-hover.svg);
+    }
+    &:active,
+    &:focus {
+        background-image: url(/assets/icons/choicircle-checked.svg);
+
+    }
+}
+
+.contactSend-btn-section{
+    width:  100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.contactSend-btn{
+    width: 101px;
+    height: 48px;
+    border: 1px solid rgb(255, 255, 255, 0.5);
+    border-radius: 30px;
+    background-color: #262e34;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 400;
+    color: rgb(255, 255, 255, 0.5);
+    font-size: 18px;
+    &:active{
+
+         border: 1px solid rgb(255, 255, 255);
+         color: rgb(255, 255, 255);
+
+    }
 }
