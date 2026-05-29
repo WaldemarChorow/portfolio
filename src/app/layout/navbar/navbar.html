@@ -1,6 +1,6 @@
 <nav>
     <div class="logo"></div>
-    <ul>
+    <ul class="nav-menu">
         <li><a href="#whyme">Why Me</a></li>
         <li><a href="#skills">Skills</a></li>
         <li><a href="#projects">Projects</a></li>
@@ -10,4 +10,22 @@
         <div class="language-option">DE</div>
         <div class="language-option">EN</div>
     </div>
+    <div class="burger-menu" (click)="toggleMobileMenu()" [class.open]="isMobileMenuOpen">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
 </nav>
+
+<div class="mobile-menu" *ngIf="isMobileMenuOpen">
+    <ul>
+        <li><a href="#whyme" (click)="closeMobileMenu()">Why Me</a></li>
+        <li><a href="#skills" (click)="closeMobileMenu()">Skills</a></li>
+        <li><a href="#projects" (click)="closeMobileMenu()">Projects</a></li>
+        <li><a href="#contact" (click)="closeMobileMenu()">Contact</a></li>
+    </ul>
+    <div class="mobile-language-choice">
+        <div class="language-option">DE</div>
+        <div class="language-option">EN</div>
+    </div>
+</div>

@@ -16,6 +16,7 @@ header {
     max-width: 1440px;
     height: 100%;
     margin-top: 115px;
+    padding: 0 25px;
 }
 
 .foto-section{
@@ -125,9 +126,10 @@ p{
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
-   
+
 
     &:hover {
         background-image: url(/assets/images/arrowdown-hover.svg);
     }
 }
+

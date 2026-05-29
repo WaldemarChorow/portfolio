@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -7,8 +7,12 @@ import { Router } from '@angular/router';
   templateUrl: './legalprivacy.html',
   styleUrl: './legalprivacy.scss',
 })
-export class Legalprivacy {
+export class Legalprivacy implements OnInit {
   constructor(private router: Router) {}
+
+  ngOnInit() {
+    window.scrollTo(0, 0);
+  }
 
   goHome() {
     this.router.navigate(['']);
