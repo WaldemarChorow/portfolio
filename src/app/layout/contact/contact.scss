@@ -52,11 +52,13 @@ h2 {
 }
 
 .contact-email:hover a {
-    color: #5f8295;
+    color: #89BCD9;
+    opacity: 0.6;
 }
 
 .contact-email:hover .email-icon {
     background-image: url(/assets/icons/email-icon-hover.svg);
+     opacity: 0.6;
 }
 
 .contact-email:active a {
@@ -66,6 +68,7 @@ h2 {
 
 .contact-email:active .email-icon {
     background-image: url(/assets/icons/email-icon-hover.svg);
+    opacity: 1;
 }
 
 .contact-tel:hover a {
@@ -73,13 +76,13 @@ h2 {
 }
 
 .contact-tel:hover .tel-icon {
-    background-image: url(/assets/icons/tel-icon-hover.svg);
+    background-image: url(/assets/icons/phone-icon-hover.svg);
 }
 
 .email-icon,
 .tel-icon {
-    width: 21px;
-    height: 20px;
+    width: 26px;
+    height: 30px;
     background-position: center center;
     background-repeat: no-repeat;
     background-size: contain;
@@ -90,7 +93,7 @@ h2 {
 }
 
 .tel-icon {
-    background-image: url(/assets/icons/tel-icon-default.svg);
+    background-image: url(/assets/icons/phone-icon-default.svg);
 }
 
 

@@ -2,12 +2,12 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-imprint',
+  selector: 'app-legalprivacy',
   imports: [],
-  templateUrl: './imprint.html',
-  styleUrl: './imprint.scss',
+  templateUrl: './legalprivacy.html',
+  styleUrl: './legalprivacy.scss',
 })
-export class Imprint {
+export class Legalprivacy {
   constructor(private router: Router) {}
 
   goHome() {

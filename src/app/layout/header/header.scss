@@ -54,9 +54,8 @@ header {
     > img {
         width: 80px;
         transition: transform 0.3s ease;
-    }
-    &:hover {
-       > img {
+
+        &:hover {
             filter: brightness(1.2);
             transform: scalex(1.1);
         }
@@ -72,18 +71,38 @@ header {
     @include flex-center-column;
     align-items: flex-end;
     gap: 10px;
-    > img {
-        width: 30px;
-    }
-    a {
-        color: #fff;
-        font-size: 1.2rem;
-        text-decoration: none;
-        transition: color 0.3s ease;
 
-        &:hover {
-            color: #ff6347;
-        }
+    a {
+        width: 30px;
+        height: 30px;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        text-decoration: none;
+    }
+}
+
+.email-link {
+    background-image: url(/assets/icons/email-blue.svg);
+
+    &:hover {
+        background-image: url(/assets/icons/mail-blue-hover.svg);
+    }
+}
+
+.linkedin-link {
+    background-image: url(/assets/icons/linkedin-blue.svg);
+
+    &:hover {
+        background-image: url(/assets/icons/linkedin-blue-hover.svg);
+    }
+}
+
+.github-link {
+    background-image: url(/assets/icons/github-blue.svg);
+
+    &:hover {
+        background-image: url(/assets/icons/git-blue-hover.svg);
     }
 }
 

@@ -1,0 +1,103 @@
+@import '../../abstract/mixins.scss';
+@import '../../base/fonts.scss';
+
+footer{
+    width: 100%;
+    height: 214px;
+    @include flex-center-center;
+    background-color: #89BCD9;
+}
+
+.footer-wrapper{
+    width: 100%;
+    max-width: 1440px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+
+    img{
+        width: 72px;
+        height: 72px;;
+    }
+}
+
+.copyright-section{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin: 0;
+    padding: 0;
+    gap: 10px;
+}
+
+.links-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    p {
+        font-family: 'Josefin Sans', sans-serif;
+        font-weight: 400;
+        color: #262E34;
+        font-size: 18px;
+        padding: 0;
+        margin: 0;
+    }
+
+    a {
+        font-family: 'Josefin Sans', sans-serif;
+        font-weight: 400;
+        color: #262E34;
+        font-size: 18px;
+        padding: 0;
+        margin: 0;
+        text-decoration: none;
+        transition: color 0.3s ease;
+
+        &:hover {
+            color: #89BCD9;
+        }
+    }
+
+    .separator {
+        color: #262E34;
+        font-size: 18px;
+        margin: 0 10px;
+    }
+}
+
+.link-section{
+    display: flex;
+    gap: 10px;
+    align-items: flex-end;
+}
+
+.git-logo, .mail-logo, .linkedin-logo{
+    width: 30px;
+    height: 30px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.git-logo{
+    background-image: url(/assets/icons/git-dark.svg);
+    &:hover{
+        background-image: url(/assets/icons/git-dark-hover.svg);
+    }
+}
+
+.mail-logo{
+    background-image: url(/assets/icons/mail-dark.svg);
+    &:hover{
+        background-image: url(/assets/icons/mail-dark-hover.svg);
+    }
+}
+
+.linkedin-logo{
+    background-image: url(/assets/icons/linkedin-dark.svg);
+    &:hover{
+        background-image: url(/assets/icons/linkedin-dark-hover.svg);
+    }
+}

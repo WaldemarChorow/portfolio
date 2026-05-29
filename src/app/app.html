@@ -1,9 +1,18 @@
-
-<app-header></app-header>
+<ng-container *ngIf="isHome">
+  <app-header></app-header>
+</ng-container>
 <app-navbar></app-navbar>
-<app-about-me></app-about-me>
-<app-skills></app-skills>
-<app-projects></app-projects>
-<app-references></app-references>
-<app-contact></app-contact>
-<router-outlet />
+
+<main>
+  <router-outlet />
+  <!-- Nur auf der Startseite anzeigen -->
+  <ng-container *ngIf="isHome">
+    <app-about-me></app-about-me>
+    <app-skills></app-skills>
+    <app-projects></app-projects>
+    <app-references></app-references>
+    <app-contact></app-contact>
+  </ng-container>
+</main>
+
+<app-footer></app-footer>
