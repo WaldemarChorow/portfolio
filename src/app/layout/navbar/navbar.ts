@@ -1,5 +1,6 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ChangeDetectionStrategy, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { MobileMenuService } from '../../services/mobile-menu.service';
 
 @Component({
   selector: 'app-navbar',
@@ -9,13 +10,15 @@ import { CommonModule } from '@angular/common';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Navbar {
-  isMobileMenuOpen = false;
+  private mobileMenu = inject(MobileMenuService);
+
+  isMobileMenuOpen = this.mobileMenu.isOpen;
 
   toggleMobileMenu() {
-    this.isMobileMenuOpen = !this.isMobileMenuOpen;
+    this.mobileMenu.toggle();
   }
 
   closeMobileMenu() {
-    this.isMobileMenuOpen = false;
+    this.mobileMenu.close();
   }
 }

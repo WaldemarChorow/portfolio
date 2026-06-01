@@ -8,10 +8,10 @@
 }
 
 .mySkillsSection-wrapper {
-    width: 100%;
     @include flex-center-column;
+    @include page-gutter;
     max-width: 860px;
-    
+
 }
 
 h2 {
@@ -85,4 +85,27 @@ h2 {
     gap: 15px;
 }
 
+@media (max-width:1024px){
+    .mySkillsSection-wrapper{
+        align-items: center;
+        justify-content: center;
+    }
 
+    .skillsContent{
+        display: contents;
+        flex-direction: column;
+        align-self: center;
+        justify-content: center;
+    }
+
+    .skillsImages {
+        width: 100%;
+        max-width: 455px;
+        justify-content: center;
+    }
+
+    .skillsText {
+        width: 100%;
+        max-width: 380px;
+    }
+}

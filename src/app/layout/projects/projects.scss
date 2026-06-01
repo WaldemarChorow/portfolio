@@ -16,11 +16,24 @@ h2 {
     @include h2;
 }
 
+// Nur auf Mobile sichtbar
+.projectName {
+    display: none;
+}
+
+.techText {
+    display: none;
+}
+
+.durationMobile {
+    display: none;
+}
+
 .projectTabs {
     display: flex;
     max-width: 1200px;
     height: 100px;
-    width: 100%;
+    @include page-gutter;
 }
 
 .tabBtn {
@@ -62,9 +75,7 @@ h2 {
     width: 100%;
     max-width: 1200px;
     background-color: #2D383F;
-    padding-bottom: 30px;
-    padding-top: 30px;
-    
+    padding: 30px 25px;
 }
 
 .projectInfo {
@@ -182,5 +193,98 @@ h2 {
         color: #89BCD9;
         transition: background-color 0.3s ease, color 0.3s ease;
         background-color: transparentize($color: #ffffff, $amount: 0.8);
+    }
+}
+
+
+@media (max-width:1023px) {
+
+    .projectTabs {
+        height: auto;
+    }
+
+    .tabBtn {
+        flex: 1;
+        height: 39px;
+        font-size: 18px;
+        border-radius: 20px 20px 0 0;
+    }
+
+    .projectContent {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    // display: contents hebt die Kinder in den Flex-Container,
+    // damit order auf ihnen direkt wirkt
+    .projectInfo,
+    .projectPreview {
+        display: contents;
+    }
+
+    // Mobile-Reihenfolge
+    .projectName {
+        display: block;
+        order: 1;
+        width: 100%;
+        font-family: 'Josefin Sans', sans-serif;
+        font-size: 26px;
+        font-weight: 600;
+        color: #fff;
+        margin: 0 0 10px 0;
+    }
+
+    .technologies {
+        order: 2;
+        width: 100%;
+        text-align: left;
+    }
+
+    .techLabel {
+        display: none;
+    }
+
+    .techIcons {
+        display: none;
+    }
+
+    .techText {
+        display: block;
+        font-family: 'Josefin Sans', sans-serif;
+        font-size: 16px;
+        font-weight: 400;
+        color: #89BCD9;
+        margin: 0;
+    }
+
+    .durationMobile {
+        display: block;
+        font-family: 'Josefin Sans', sans-serif;
+        font-size: 16px;
+        font-weight: 400;
+        color: #89BCD9;
+        margin: 4px 0 0 0;
+    }
+
+    .projectImage {
+        order: 3;
+        width: 100%;
+        max-width: 450px;
+        height: auto;
+    }
+
+    .infoBlock {
+        order: 4;
+        width: 100%;
+    }
+
+    .duration {
+        display: none;
+    }
+
+    .projectButtons {
+        order: 7;
+        width: 100%;
+        justify-content: center;
     }
 }

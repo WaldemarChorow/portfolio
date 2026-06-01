@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { MobileMenuService } from '../../services/mobile-menu.service';
 
 @Component({
   selector: 'app-header',
@@ -7,13 +8,21 @@ import { Component } from '@angular/core';
   styleUrl: './header.scss',
 })
 export class Header {
+  private mobileMenu = inject(MobileMenuService);
+
+  isMobileMenuOpen = this.mobileMenu.isOpen;
+
+  closeMobileMenu() {
+    this.mobileMenu.close();
+  }
+
   scrollToWhyMe() {
   const element = document.querySelector('.whyMeSection');
   const navbarHeight = 104;
   if (element) {
     const elementPosition = element.getBoundingClientRect().top + window.scrollY;
     const offsetPosition = elementPosition - navbarHeight;
-    
+
     window.scrollTo({
       top: offsetPosition,
       behavior: 'smooth'

@@ -7,9 +7,9 @@
 }
 
 .contact-wrapper {
-    width: 100%;
     max-width: 911px;
     @include flex-center-column;
+    @include page-gutter;
     margin-bottom: 80px;
 }
 
@@ -280,4 +280,69 @@ p {
          color: rgb(255, 255, 255);
 
     }
+}
+
+
+@media (max-width:1024px) {
+.contact-wrapper{
+    max-width: 442px;
+    
+}
+
+h2{
+    margin-bottom: 30px;
+}
+
+    .contact-content{
+        width: auto;
+        @include flex-center-column;
+        flex-direction: column-reverse;
+        align-items: flex-start;
+    }
+    
+    .contact-inputNameEmail{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contact-form{
+        @include flex-center-center;
+
+        p{
+            display: none;
+        }
+    }
+
+    .inputFieldText-section{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        p{
+            display: none;
+        }
+       
+    }
+    .inputFieldText{
+        width: 100%;
+        max-width: 390px;
+    }
+
+    .contact-text {
+        width: 100%;
+        max-width: 430px;
+    }
+
+    .inputFieldName,
+    .inputFieldEmail {
+        width: 100%;
+        max-width: 390px;
+    }
+
+    .contact-privacyChoice{
+        margin-top: 25px;
+        gap: 10px;
+    }
+
 }

@@ -9,8 +9,8 @@ footer{
 }
 
 .footer-wrapper{
-    width: 100%;
     max-width: 1440px;
+    @include page-gutter;
     display: flex;
     align-items: flex-end;
     justify-content: space-between;

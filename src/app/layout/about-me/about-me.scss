@@ -8,11 +8,11 @@
 }
 
 .whyMeSection-wrapper {
-    width: 100%;
     @include flex-center-column;
+    @include page-gutter;
     max-width: 860px;
 
-}    
+}
 
 h2 {
     @include h2;
@@ -91,5 +91,25 @@ h2 {
 
     &:active {
         background-image: url(/assets/icons/letstalkbtn-default.svg);
+    }
+}
+
+@media (max-width:1024px){
+    .whyMeContent{
+        @include flex-center-column;
+    }
+
+    .location {
+        width: 100%;
+        max-width: 460px;
+    }
+
+    .whyMeText {
+        width: 100%;
+        max-width: 380px;
+    }
+
+    .letsTalkBtn {
+        left: 0;
     }
 }

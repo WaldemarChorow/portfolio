@@ -4,22 +4,22 @@
     <div class="projectTabs">
       @for (project of projects; track project.name; let i = $index) {
         <button class="tabBtn" [class.active]="activeIndex === i" (click)="setActive(i)">
-          {{ i + 1 }}. {{ project.name }}
+          {{ i + 1 }}. Project
         </button>
       }
     </div>
-
   </div>
 
   <div class="projectContent-wrapper">
     <div class="projectContent">
+
+      <h3 class="projectName">{{ projects[activeIndex].name }}</h3>
+
       <div class="projectInfo">
         <div class="infoBlock">
           <img class="dot" src="/assets/icons/projekts-dot.svg" alt="" />
           <div>
-            <h3>
-              About the project <span class="duration">{{ projects[activeIndex].duration }}</span>
-            </h3>
+            <h3>About the project <span class="duration">{{ projects[activeIndex].duration }}</span></h3>
             <p>{{ projects[activeIndex].about }}</p>
           </div>
         </div>
@@ -38,9 +38,12 @@
           </div>
         </div>
       </div>
+
       <div class="projectPreview">
         <div class="technologies">
-          <p>Technologies</p>
+          <p class="techLabel">Technologies</p>
+          <p class="techText">Technologies: {{ getTechNames(projects[activeIndex].technologies) }}</p>
+          <p class="durationMobile">{{ projects[activeIndex].duration }}</p>
           <div class="techIcons">
             @for (tech of projects[activeIndex].technologies; track tech.alt) {
               <img [src]="tech.src" [alt]="tech.alt" />
@@ -57,6 +60,7 @@
           <a [href]="projects[activeIndex].githubLink" class="btnGit" target="_blank">GitHub</a>
         </div>
       </div>
+
     </div>
   </div>
 

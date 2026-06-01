@@ -73,4 +73,8 @@ export class Projects {
   setActive(index: number) {
     this.activeIndex = index;
   }
+
+  getTechNames(techs: { src: string; alt: string }[]): string {
+    return techs.map(t => t.alt).join(', ');
+  }
 }

@@ -8,10 +8,10 @@
 }
 
 .ref-sec-wrapper {
-    width: 100%;
     max-width: 1440px;
     @include flex-center-column;
     @include margin-top-bottom;
+    @include page-gutter;
 }
 
 h4 {

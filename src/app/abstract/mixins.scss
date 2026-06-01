@@ -15,3 +15,12 @@
   margin-top: 50px;
   margin-bottom: 50px;
 }
+
+// Sorgt für einen durchgehenden Mindestabstand von 25px links/rechts.
+// box-sizing: border-box ist global gesetzt, daher zieht das Padding
+// von der 100%-Breite ab statt sie zu vergrößern.
+@mixin page-gutter {
+  width: 100%;
+  padding-left: 25px;
+  padding-right: 25px;
+}

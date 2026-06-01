@@ -2,8 +2,23 @@
 
 <header>
     <section class="hero-section">
-        <section class="foto-section">
-            <img src="assets/images/foto-me.png" alt="foto from waldemar chorow">
+        <section class="foto-section" [class.menu-open]="isMobileMenuOpen()">
+            @if (isMobileMenuOpen()) {
+                <nav class="foto-menu">
+                    <ul>
+                        <li><a href="#whyme" (click)="closeMobileMenu()">Why me</a></li>
+                        <li><a href="#skills" (click)="closeMobileMenu()">Skills</a></li>
+                        <li><a href="#projects" (click)="closeMobileMenu()">Projects</a></li>
+                        <li><a href="#contact" (click)="closeMobileMenu()">Contact</a></li>
+                    </ul>
+                    <div class="foto-menu-language">
+                        <div class="language-option">DE</div>
+                        <div class="language-option active">EN</div>
+                    </div>
+                </nav>
+            } @else {
+                <img src="assets/images/foto-me.png" alt="foto from waldemar chorow">
+            }
         </section>
         <section class="headline-section">
             <section class="logo-link-section">

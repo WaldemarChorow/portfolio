@@ -21,8 +21,20 @@
 
 @import './app/abstract/mixins.scss';
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
 body {
   width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+body {
     @include flex-center-column;
     background-color: #252d33;
     padding: 0%;
