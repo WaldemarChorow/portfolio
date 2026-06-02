@@ -27,7 +27,7 @@ h2 {
 .location {
     width: 460px;
     @include flex-center-center;
-    align-items: flex-start;
+    align-items: center;
     gap: 10px;
 
     p {
@@ -47,7 +47,7 @@ h2 {
 .locationIcon {
     height: 100%;
     @include flex-center-center;
-    align-items: flex-start;
+    align-items: center;
     margin: 0;
     padding: 0;
 
@@ -65,6 +65,7 @@ h2 {
     width: 380px;
     @include flex-center-column;
     gap: 25px;
+    
     p {
         font-family: Josefin Sans, sans-serif;
         font-weight: 500;
@@ -106,7 +107,6 @@ h2 {
     .location {
         width: 100%;
         max-width: 460px;
-        align-items: center;
         gap: 20px;
 
         p{
@@ -123,12 +123,15 @@ h2 {
             display: block;
             width: 32px;
             height: 40px;
+            margin-left: 55px;
+            
         }
     }
 
     .whyMeText {
         width: 100%;
         max-width: 380px;
+        text-align: center;
     }
 
     .letsTalkBtn {

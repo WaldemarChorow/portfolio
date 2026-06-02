@@ -119,7 +119,34 @@ a {
 
 @media (max-width: 1024px){
     .reference-single{
+        align-items: flex-start;
+        padding-left: 50px;
         width: 290px;
         height: 290px;
+        margin-left: 20px;
+        background-image: url(/assets/images/ref-bg-mobile.svg);
+
+        &:hover {
+            background-image: url(/assets/images/ref-bg-mobile.svg);
+        }
+    }
+
+    .ref-sec-wrapper{
+        padding: 0;
+    }
+
+    .references-content{
+        gap: 0;
+    }
+
+    h3{
+        font-size: 24px;
+        padding: 0;
+        margin: 0;
+        margin-bottom: 10px;
+    }
+
+    .reference-text{
+        font-size: 16px;
     }
 }
