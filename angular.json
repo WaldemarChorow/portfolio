@@ -59,6 +59,11 @@
         },
         "serve": {
           "builder": "@angular/build:dev-server",
+          "options": {
+            "headers": {
+              "Content-Security-Policy": "script-src 'self' 'unsafe-eval'"
+            }
+          },
           "configurations": {
             "production": {
               "buildTarget": "portfolio:build:production"

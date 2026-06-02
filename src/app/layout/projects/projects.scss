@@ -87,8 +87,14 @@ h2 {
 
 .infoBlock {
     display: flex;
-    gap: 15px;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.infoBlock-header {
+    display: flex;
     align-items: flex-start;
+    gap: 15px;
 }
 
 .dot {
@@ -116,6 +122,7 @@ h2 {
     font-weight: 400;
     color: #fff;
     margin: 0;
+    padding-left: 51px;
 }
 
 .projectPreview {
@@ -213,24 +220,22 @@ h2 {
     .projectContent {
         flex-direction: column;
         align-items: center;
+        gap: 0;
     }
 
-    // display: contents hebt die Kinder in den Flex-Container,
-    // damit order auf ihnen direkt wirkt
     .projectInfo,
     .projectPreview {
         display: contents;
     }
 
-    // Mobile-Reihenfolge
     .projectName {
         display: block;
         order: 1;
         width: 100%;
         font-family: 'Josefin Sans', sans-serif;
-        font-size: 26px;
+        font-size: 24px;
         font-weight: 600;
-        color: #fff;
+        color: #89BCD9;
         margin: 0 0 10px 0;
     }
 
@@ -248,20 +253,16 @@ h2 {
         display: none;
     }
 
-    .techText {
+    .technologies p.techText {
         display: block;
-        font-family: 'Josefin Sans', sans-serif;
-        font-size: 16px;
-        font-weight: 400;
+        font-size: 14px;
         color: #89BCD9;
         margin: 0;
     }
 
-    .durationMobile {
+    .technologies p.durationMobile {
         display: block;
-        font-family: 'Josefin Sans', sans-serif;
-        font-size: 16px;
-        font-weight: 400;
+        font-size: 14px;
         color: #89BCD9;
         margin: 4px 0 0 0;
     }
@@ -271,11 +272,28 @@ h2 {
         width: 100%;
         max-width: 450px;
         height: auto;
+        margin: 20px 0px;
     }
 
     .infoBlock {
         order: 4;
         width: 100%;
+        margin-bottom: 15px;
+
+        p {
+            font-size: 16px;
+            padding-left: 0;
+        }
+    }
+
+    .infoBlock-header {
+        align-items: center;
+        gap: 0px;
+        h3 {
+            font-size: 18px;
+            color: #89BCD9;
+            margin: 0;
+        }
     }
 
     .duration {
@@ -285,6 +303,18 @@ h2 {
     .projectButtons {
         order: 7;
         width: 100%;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .btnLive,
+    .btnGit {
+        width: 116px;
+        height: 43px;
+        font-size: 14px;
+        padding: 0;
+        display: flex;
+        align-items: center;
         justify-content: center;
     }
 }

@@ -110,3 +110,16 @@ a {
     padding: 0;
     margin: 0;
 }
+
+@include mobile {
+    .h4-sub {
+        display: none;
+    }
+}
+
+@media (max-width: 1024px){
+    .reference-single{
+        width: 290px;
+        height: 290px;
+    }
+}

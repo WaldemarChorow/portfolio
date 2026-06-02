@@ -85,6 +85,10 @@ h2 {
     gap: 15px;
 }
 
+.letsTalkBtn-mobile {
+    display: none;
+}
+
 @media (max-width:1024px){
     .mySkillsSection-wrapper{
         align-items: center;
@@ -102,10 +106,80 @@ h2 {
         width: 100%;
         max-width: 455px;
         justify-content: center;
+        gap: 15px;
+        margin-bottom: 15px;
+
+        figure {
+            width: 55px;
+        }
+
+        img {
+            width: 41px;
+            height: 45px;
+            object-fit: contain;
+        }
+
+        figcaption {
+            display: none;
+        }
     }
 
     .skillsText {
-        width: 100%;
-        max-width: 380px;
+        width: 200px;
+        height: 200px;
+        background-image: none;
+        gap: 35px;
+
+        p{
+        color: #89BCD9;
+        font-size: 16px;
+        }
+
+        &:hover {
+            background-image: none;
+        }
     }
+
+    .learningSkill-images{
+        @include flex-center-center;
+        background-image: url(/assets/images/shape-learning-default.svg);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center center;
+        width: 113px;
+        height: 96px;
+
+        img{
+            width: 32px;
+        }
+    }
+
+    .letsTalkBtn-mobile {
+        display: block;
+        width: 116px;
+        height: 43px;
+        position: relative;
+        background-image: url(/assets/icons/letstalkbtn-default.svg);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        margin-top: 20px;
+
+        &:hover {
+            background-image: url(/assets/icons/letstalkbtn-hover.svg);
+        }
+
+        &:active {
+            background-image: url(/assets/icons/letstalkbtn-default.svg);
+        }
+    }
+    
 }
+
+
+
+
+
