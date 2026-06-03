@@ -10,12 +10,27 @@
 .ref-sec-wrapper {
     max-width: 1440px;
     @include flex-center-column;
+    align-items: flex-start;
     @include margin-top-bottom;
     @include page-gutter;
+    margin-bottom: 0;
 }
 
 h4 {
     @include h4;
+    margin-bottom: 10px;
+    padding-left: 25px;
+}
+
+.ref-subtitle {
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    color: #ffffff;
+
+    margin-bottom: 50px;
+    padding-left: 25px;
+  
 }
 
 .references-content {

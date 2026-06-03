@@ -1,6 +1,6 @@
 import { Component, signal } from '@angular/core';
-import { RouterOutlet, Router } from '@angular/router';
-import { CommonModule } from '@angular/common';
+import { RouterOutlet, Router, NavigationEnd } from '@angular/router';
+import { filter } from 'rxjs';
 import { Header } from './layout/header/header';
 import { Navbar } from './layout/navbar/navbar';
 import { AboutMe } from './layout/about-me/about-me';
@@ -12,17 +12,21 @@ import { Footer } from './layout/footer/footer';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, CommonModule, Header, Navbar, AboutMe, Skills, Projects, Contact, References, Footer],
+  imports: [RouterOutlet, Header, Navbar, AboutMe, Skills, Projects, Contact, References, Footer],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
 export class App {
   protected readonly title = signal('portfolio');
-  isHome = true;
+  isHome = signal(true);
 
   constructor(private router: Router) {
-    this.router.events.subscribe(() => {
-      this.isHome = this.router.url === '' || this.router.url === '/';
-    });
+    this.isHome.set(this.router.url === '' || this.router.url === '/');
+    this.router.events
+      .pipe(filter((e) => e instanceof NavigationEnd))
+      .subscribe((e) => {
+        const url = (e as NavigationEnd).urlAfterRedirects;
+        this.isHome.set(url === '' || url === '/');
+      });
   }
 }

@@ -76,6 +76,7 @@ header {
             text-decoration: none;
             color: #262e34;
             font-family: 'Josefin Sans', sans-serif;
+            cursor: pointer;
             font-weight: 500;
             font-size: 26px;
             transition: color 0.3s ease;
@@ -197,7 +198,7 @@ header {
         }
 
         p {
-            font-size: 32px;
+            font-size: 26px;
         }
     }
 }
@@ -225,12 +226,12 @@ p {
 
 @media (max-width: 1024px) {
     header {
-        margin-top: 100px;
         justify-content: center;
+        padding-top: 104px;
+        height: 100vh;
     }
 
     .hero-section {
-        height: 100%;
         width: 100%;
         display: flex;
         flex-direction: column;
@@ -249,11 +250,12 @@ p {
 
         .foto-section-bg{
         transform: rotate(0deg);
+        bottom: -4px;
     }
 
         img {
             position: relative;
-            bottom: -64px;
+            
             left: -10px;
             max-width: 485px;
             max-height: 565px;
@@ -273,7 +275,7 @@ p {
             width: 312px;
             height: 326px;
             max-width: 90vw;
-            align-items: flex-end;
+            align-items: center;
 
             .foto-section-bg {
                 display: none;

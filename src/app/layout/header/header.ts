@@ -1,14 +1,19 @@
 import { Component, inject } from '@angular/core';
+import { TranslatePipe } from '@ngx-translate/core';
 import { MobileMenuService } from '../../services/mobile-menu.service';
+import { LanguageService } from '../../services/language.service';
+import { ScrollService } from '../../services/scroll.service';
 
 @Component({
   selector: 'app-header',
-  imports: [],
+  imports: [TranslatePipe],
   templateUrl: './header.html',
   styleUrl: './header.scss',
 })
 export class Header {
   private mobileMenu = inject(MobileMenuService);
+  lang = inject(LanguageService);
+  scroll = inject(ScrollService);
 
   isMobileMenuOpen = this.mobileMenu.isOpen;
 
@@ -16,17 +21,12 @@ export class Header {
     this.mobileMenu.close();
   }
 
-  scrollToWhyMe() {
-  const element = document.querySelector('.whyMeSection');
-  const navbarHeight = 104;
-  if (element) {
-    const elementPosition = element.getBoundingClientRect().top + window.scrollY;
-    const offsetPosition = elementPosition - navbarHeight;
-
-    window.scrollTo({
-      top: offsetPosition,
-      behavior: 'smooth'
-    });
+  navigateTo(sectionId: string) {
+    this.mobileMenu.close();
+    setTimeout(() => this.scroll.scrollTo(sectionId), 50);
   }
-}
+
+  scrollToWhyMe() {
+    this.scroll.scrollTo('whyme');
+  }
 }

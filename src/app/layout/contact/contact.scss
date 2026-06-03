@@ -11,11 +11,13 @@
     @include flex-center-column;
     @include page-gutter;
     margin-bottom: 80px;
+    margin-top: 80px
 }
 
 
 h2 {
     @include h2;
+    
 }
 
 .contact-content {
@@ -58,7 +60,7 @@ h2 {
 
 .contact-email:hover .email-icon {
     background-image: url(/assets/icons/email-icon-hover.svg);
-     opacity: 0.6;
+    opacity: 0.6;
 }
 
 .contact-email:active a {
@@ -113,6 +115,47 @@ a {
     display: none;
 }
 
+.contact-heading-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    position: relative;
+    margin-bottom: 50px;
+
+    h2 {
+        margin: 0;
+    }
+
+    .desktop-only {
+        position: absolute;
+        right: -60px;
+    }
+}
+
+.scroll-top-btn {
+    display: block;
+    width: 38px;
+    height: 89px;
+    background-image: url(/assets/images/arrowdown-default.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    transform: rotate(180deg);
+    cursor: pointer;
+
+    &:hover {
+        background-image: url(/assets/images/arrowdown-hover.svg);
+    }
+}
+
+.scroll-top-mobile {
+    display: none;
+    width: 100%;
+    justify-content: center;
+    margin-top: 30px;
+}
+
 .contact-form {
     @include flex-center-center;
     width: 100%;
@@ -129,7 +172,7 @@ a {
 
 .inputFieldName,
 .inputFieldEmail {
-    width: 390px;
+    width: 445px;
     height: 60px;
     border: 1px solid #89BCD9;
     border-radius: 30px;
@@ -149,6 +192,7 @@ a {
     &:hover {
         background-color: #89BCD91F;
     }
+
     &:active,
     &:focus {
         background-color: #89BCD91F;
@@ -158,7 +202,7 @@ a {
 }
 
 .inputFieldText {
-    width: 860px;
+    width: 911px;
     height: 146px;
     border: 1px solid #89BCD9;
     border-radius: 30px;
@@ -184,6 +228,7 @@ a {
     &:hover {
         background-color: #89BCD91F;
     }
+
     &:active,
     &:focus {
         background-color: #89BCD91F;
@@ -242,25 +287,25 @@ p {
     padding-left: 25px;
 }
 
-.contact-privacyChoice{
+.contact-privacyChoice {
     width: 100%;
     display: flex;
     justify-content: flex-start;
-    align-items:center ;
+    align-items: center;
     margin: 0;
     padding: 0;
 
-    p{
+    p {
         color: #F8F5EC;
         padding-left: 5px;
     }
 
-    span{
+    span {
         color: #89BCD9;
     }
 }
 
-.contact-privacyChoiceIcon{
+.contact-privacyChoiceIcon {
     width: 24px;
     height: 24px;
     min-width: 24px;
@@ -281,14 +326,15 @@ p {
     }
 }
 
-.contactSend-btn-section{
-    width:  100%;
+.contactSend-btn-section {
+    width: 100%;
     display: flex;
     justify-content: flex-end;
     align-items: center;
+    margin-top: 25px;
 }
 
-.contactSend-btn{
+.contactSend-btn {
     width: 101px;
     height: 48px;
     border: 1px solid rgba(255, 255, 255, 0.5);
@@ -301,8 +347,8 @@ p {
     cursor: not-allowed;
 
     &.active {
-        border: 1px solid #ffffff;
-        color: #ffffff;
+        color: #89BCD9;
+        border: 1px solid #89BCD9;
         cursor: pointer;
 
         &:hover {
@@ -313,15 +359,15 @@ p {
 
 
 @media (max-width:1024px) {
-    .contact-wrapper{
-        max-width: 442px;
+    .contact-wrapper {
+        max-width: 390px;
     }
 
-    h2{
+    h2 {
         margin-bottom: 30px;
     }
 
-    .contact-content{
+    .contact-content {
         width: auto;
         @include flex-center-column;
         flex-direction: column-reverse;
@@ -340,31 +386,31 @@ p {
         width: 100%;
     }
 
-    .contact-inputNameEmail{
+    .contact-inputNameEmail {
         flex-direction: column;
         align-items: center;
     }
 
-    .contact-form{
+    .contact-form {
         @include flex-center-center;
 
-        p{
+        p {
             display: none;
         }
     }
 
-    .inputFieldText-section{
+    .inputFieldText-section {
         width: 100%;
         display: flex;
         align-items: center;
         justify-content: center;
 
-        p{
+        p {
             display: none;
         }
     }
 
-    .inputFieldText{
+    .inputFieldText {
         width: 337px;
         box-sizing: border-box;
     }
@@ -380,19 +426,27 @@ p {
         box-sizing: border-box;
     }
 
-    .contact-privacyChoice{
+    .contact-privacyChoice {
         margin-top: 25px;
         gap: 10px;
+    }
+
+    .contact-heading-row .desktop-only {
+        display: none;
+    }
+
+    .scroll-top-mobile {
+        display: flex;
     }
 }
 
 @media (max-width: 389px) {
-    .contact-wrapper{
+    .contact-wrapper {
         max-width: 315px;
         align-items: flex-start;
     }
 
-    h2{
+    h2 {
         text-align: center;
         width: 100%;
     }

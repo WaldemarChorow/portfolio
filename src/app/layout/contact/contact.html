@@ -1,11 +1,12 @@
-<section class="contact-section">
+<section class="contact-section" id="contact">
   <div class="contact-wrapper">
-    <h2>Contact me</h2>
+    <div class="contact-heading-row">
+      <h2>{{ 'contact.title' | translate }}</h2>
+      <a class="scroll-top-btn desktop-only" (click)="scrollToTop()"></a>
+    </div>
     <div class="contact-content">
       <div class="contact-text">
-        Encourage people to contact you and describe what role you are interested in. Show that you
-        will add value to their projects through your work. Example: Feel free to get in touch with
-        job offers or opportunities such as: ...
+        {{ 'contact.text' | translate }}
       </div>
       <div class="contact-info">
         <div class="contact-email">
@@ -23,48 +24,48 @@
       <div class="contact-inputNameEmail">
 
         <div class="inputFieldName-section">
-          <h3 class="contact-mobile-heading">Let us work together!</h3>
-          <p class="field-label">Your name</p>
+          <h3 class="contact-mobile-heading">{{ 'contact.mobile_heading' | translate }}</h3>
+          <p class="field-label">{{ 'contact.name_label' | translate }}</p>
           <input
             class="inputFieldName"
             [class.error]="nameError"
             [class.success]="nameSuccess"
             type="text"
-            placeholder="Your name (min. 5 characters)"
+            [placeholder]="'contact.name_placeholder' | translate"
             [(ngModel)]="name"
             (blur)="nameTouched.set(true)"
           >
-          @if (nameError) { <p class="error-msg">Your name is required.</p> }
+          @if (nameError) { <p class="error-msg">{{ 'contact.error_name' | translate }}</p> }
         </div>
 
         <div class="inputFieldEmail-section">
-          <p class="field-label">Your e-mail</p>
+          <p class="field-label">{{ 'contact.email_label' | translate }}</p>
           <input
             class="inputFieldEmail"
             [class.error]="emailError"
             [class.success]="emailSuccess"
             type="text"
-            placeholder="Your e-mail (e.g. name@example.com)"
+            [placeholder]="'contact.email_placeholder' | translate"
             [(ngModel)]="email"
             (blur)="emailTouched.set(true)"
           >
-          @if (emailError) { <p class="error-msg">Your e-mail is not valid.</p> }
+          @if (emailError) { <p class="error-msg">{{ 'contact.error_email' | translate }}</p> }
         </div>
 
       </div>
     </div>
 
     <div class="inputFieldText-section">
-      <p class="field-label">Your message</p>
+      <p class="field-label">{{ 'contact.message_label' | translate }}</p>
       <textarea
         class="inputFieldText"
         [class.error]="messageError"
         [class.success]="messageSuccess"
-        placeholder="Your message (min. 10 characters)"
+        [placeholder]="'contact.message_placeholder' | translate"
         [(ngModel)]="message"
         (blur)="messageTouched.set(true)"
       ></textarea>
-      @if (messageError) { <p class="error-msg">Your text is not valid.</p> }
+      @if (messageError) { <p class="error-msg">{{ 'contact.error_message' | translate }}</p> }
     </div>
 
     <div class="contact-privacyChoice" [class.error]="submitted() && !privacyAccepted()">
@@ -73,7 +74,7 @@
         [class.checked]="privacyAccepted()"
         (click)="togglePrivacy()"
       ></div>
-      <p>I've read the <span>privacy policy</span> and agree to the processing of my data as outlined.</p>
+      <p>{{ 'contact.privacy' | translate }} <span>{{ 'contact.privacy_link' | translate }}</span> {{ 'contact.privacy_end' | translate }}</p>
     </div>
 
     <div class="contactSend-btn-section">
@@ -82,7 +83,11 @@
         [class.active]="formValid"
         [disabled]="!formValid"
         (click)="onSubmit()"
-      >Send</button>
+      >{{ 'contact.send' | translate }}</button>
+    </div>
+
+    <div class="scroll-top-mobile">
+      <a class="scroll-top-btn" (click)="scrollToTop()"></a>
     </div>
   </div>
 </section>

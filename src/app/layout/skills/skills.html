@@ -1,6 +1,6 @@
-<section class="mySkillsSection">
+<section class="mySkillsSection" id="skills">
   <div class="mySkillsSection-wrapper">
-    <h2>My Skills</h2>
+    <h2>{{ 'skills.title' | translate }}</h2>
     <div class="skillsContent">
       <div class="skillsImages">
         @for (skill of skills; track skill.alt){
@@ -11,7 +11,7 @@
         }
       </div>
       <div class="skillsText">
-        <p>I am currently learning</p>
+        <p>{{ 'skills.learning' | translate }}</p>
         <div class="learningSkill-images">
           <div class="learSkill1">
             <img src="/assets/icons/react.svg" alt="React" />
@@ -23,5 +23,5 @@
       </div>
     </div>
   </div>
-  <button class="letsTalkBtn letsTalkBtn-mobile"></button>
+  <button class="letsTalkBtn letsTalkBtn-mobile" (click)="scroll.scrollTo('contact')"></button>
 </section>

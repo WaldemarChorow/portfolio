@@ -1,12 +1,15 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { TranslatePipe } from '@ngx-translate/core';
+import { ScrollService } from '../../services/scroll.service';
 
 @Component({
   selector: 'app-skills',
-  imports: [],
+  imports: [TranslatePipe],
   templateUrl: './skills.html',
   styleUrl: './skills.scss',
 })
 export class Skills {
+  scroll = inject(ScrollService);
   skills = [
     {src: '/assets/icons/angular.svg', alt: 'Angular'},
     {src: '/assets/icons/typescript.svg', alt: 'TypeScript'},
