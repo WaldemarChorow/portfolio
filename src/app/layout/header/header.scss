@@ -271,13 +271,17 @@ p {
 
         &.menu-open {
             width: 312px;
-            height: 312px;
+            height: 326px;
             max-width: 90vw;
-            max-height: 90vw;
+            align-items: flex-end;
+
+            .foto-section-bg {
+                display: none;
+            }
 
             &:hover {
                 width: 312px;
-                height: 312px;
+                height: 326px;
             }
         }
     }

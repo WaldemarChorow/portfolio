@@ -29,6 +29,15 @@ footer{
     margin: 0;
     padding: 0;
     gap: 10px;
+
+    p {
+        font-family: 'Josefin Sans', sans-serif;
+        font-weight: 400;
+        color: #262E34;
+        font-size: 18px;
+        padding: 0;
+        margin: 0;
+    }
 }
 
 .links-row {
@@ -99,5 +108,72 @@ footer{
     background-image: url(/assets/icons/linkedin-dark.svg);
     &:hover{
         background-image: url(/assets/icons/linkedin-dark-hover.svg);
+    }
+}
+
+@media (max-width: 1024px){
+    .footer-wrapper{
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+
+        img {
+            order: 1;
+        }
+
+        .link-section {
+            order: 2;
+            gap: 25px;
+        }
+
+        .copyright-section {
+            order: 3;
+        }
+    }
+
+    .copyright-section{
+        flex-direction: row;
+        align-items: center;
+        gap: 25px;
+    }
+
+    .links-row{
+        flex-direction: column;
+        align-items: flex-start;
+        .separator{
+            display: none;
+        }
+    }
+
+    .git-logo {
+        background-image: url(/assets/icons/git-icon-mobile.svg);
+        &:hover {
+            background-image: url(/assets/icons/git-icon-mobile.svg);
+        }
+    }
+
+    .mail-logo {
+        background-image: url(/assets/icons/mail-icon-mobile.svg);
+        &:hover {
+            background-image: url(/assets/icons/mail-icon-mobile.svg);
+        }
+    }
+
+    .linkedin-logo {
+        background-image: url(/assets/icons/linkedin-icon-mobile.svg);
+        &:hover {
+            background-image: url(/assets/icons/linkedin-icon-mobile.svg);
+        }
+    }
+
+    .links-row p,
+    .copyright-section p {
+        font-family: 'Josefin Sans', sans-serif;
+        font-size: 14px;
+    }
+
+    .links-row a {
+        font-family: 'Josefin Sans', sans-serif;
+        font-size: 14px;
     }
 }

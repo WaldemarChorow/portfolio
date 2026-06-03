@@ -18,28 +18,71 @@
         </div>
       </div>
     </div>
+
     <div class="contact-form">
-        <div class="contact-inputNameEmail">
-            <div class="inputFieldName-section">
-                <p>Your name</p>
-                <input class="inputFieldName" type="text">
-            </div>
-            <div class="inputFieldEmail-section">
-              <p>Your e-mail</p>
-              <input class="inputFieldEmail" type="text">
-            </div>    
+      <div class="contact-inputNameEmail">
+
+        <div class="inputFieldName-section">
+          <h3 class="contact-mobile-heading">Let us work together!</h3>
+          <p class="field-label">Your name</p>
+          <input
+            class="inputFieldName"
+            [class.error]="nameError"
+            [class.success]="nameSuccess"
+            type="text"
+            placeholder="Your name (min. 5 characters)"
+            [(ngModel)]="name"
+            (blur)="nameTouched.set(true)"
+          >
+          @if (nameError) { <p class="error-msg">Your name is required.</p> }
         </div>
+
+        <div class="inputFieldEmail-section">
+          <p class="field-label">Your e-mail</p>
+          <input
+            class="inputFieldEmail"
+            [class.error]="emailError"
+            [class.success]="emailSuccess"
+            type="text"
+            placeholder="Your e-mail (e.g. name@example.com)"
+            [(ngModel)]="email"
+            (blur)="emailTouched.set(true)"
+          >
+          @if (emailError) { <p class="error-msg">Your e-mail is not valid.</p> }
+        </div>
+
+      </div>
     </div>
+
     <div class="inputFieldText-section">
-      <p>Your message</p>
-      <textarea class="inputFieldText"></textarea>
+      <p class="field-label">Your message</p>
+      <textarea
+        class="inputFieldText"
+        [class.error]="messageError"
+        [class.success]="messageSuccess"
+        placeholder="Your message (min. 10 characters)"
+        [(ngModel)]="message"
+        (blur)="messageTouched.set(true)"
+      ></textarea>
+      @if (messageError) { <p class="error-msg">Your text is not valid.</p> }
     </div>
-    <div class="contact-privacyChoice">
-      <div class="contact-privacyChoiceIcon"></div>
+
+    <div class="contact-privacyChoice" [class.error]="submitted() && !privacyAccepted()">
+      <div
+        class="contact-privacyChoiceIcon"
+        [class.checked]="privacyAccepted()"
+        (click)="togglePrivacy()"
+      ></div>
       <p>I've read the <span>privacy policy</span> and agree to the processing of my data as outlined.</p>
     </div>
+
     <div class="contactSend-btn-section">
-      <button class="contactSend-btn">Send</button>
+      <button
+        class="contactSend-btn"
+        [class.active]="formValid"
+        [disabled]="!formValid"
+        (click)="onSubmit()"
+      >Send</button>
     </div>
   </div>
 </section>

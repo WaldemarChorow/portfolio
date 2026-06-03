@@ -109,6 +109,10 @@ a {
     margin: 0;
 }
 
+.contact-mobile-heading {
+    display: none;
+}
+
 .contact-form {
     @include flex-center-center;
     width: 100%;
@@ -136,6 +140,11 @@ a {
     font-size: 18px;
     padding-left: 25px;
     padding-right: 25px;
+    box-sizing: border-box;
+
+    &::placeholder {
+        font-size: 14px;
+    }
 
     &:hover {
         background-color: #89BCD91F;
@@ -162,10 +171,15 @@ a {
     padding-top: 15px;
     padding-left: 25px;
     padding-right: 25px;
-    resize: vertical;
+    box-sizing: border-box;
+    resize: none;
     word-wrap: break-word;
     overflow-wrap: break-word;
     white-space: pre-wrap;
+
+    &::placeholder {
+        font-size: 14px;
+    }
 
     &:hover {
         background-color: #89BCD91F;
@@ -204,11 +218,17 @@ a {
 .inputFieldEmail.error,
 .inputFieldText.error {
     border-color: #E44C36;
+    color: #E44C36;
 }
 
-.inputFieldName.error + p,
-.inputFieldEmail.error + p,
-.inputFieldText.error + p {
+.error-msg {
+    color: #E44C36 !important;
+    padding-left: 25px;
+    font-size: 13px;
+    margin-top: 4px;
+}
+
+.contact-privacyChoice.error p {
     color: #E44C36;
 }
 
@@ -243,17 +263,21 @@ p {
 .contact-privacyChoiceIcon{
     width: 24px;
     height: 24px;
+    min-width: 24px;
     background-image: url(/assets/icons/choicircle-default.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
     margin: 0;
     padding: 0;
+    cursor: pointer;
 
-    &:hover{
-    background-image: url(/assets/icons/choicircle-hover.svg);
+    &:hover {
+        background-image: url(/assets/icons/choicircle-hover.svg);
     }
-    &:active,
-    &:focus {
-        background-image: url(/assets/icons/choicircle-checked.svg);
 
+    &.checked {
+        background-image: url(/assets/icons/choicircle-checked.svg);
     }
 }
 
@@ -267,31 +291,35 @@ p {
 .contactSend-btn{
     width: 101px;
     height: 48px;
-    border: 1px solid rgb(255, 255, 255, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.5);
     border-radius: 30px;
     background-color: #262e34;
     font-family: 'Josefin Sans', sans-serif;
     font-weight: 400;
-    color: rgb(255, 255, 255, 0.5);
+    color: rgba(255, 255, 255, 0.5);
     font-size: 18px;
-    &:active{
+    cursor: not-allowed;
 
-         border: 1px solid rgb(255, 255, 255);
-         color: rgb(255, 255, 255);
+    &.active {
+        border: 1px solid #ffffff;
+        color: #ffffff;
+        cursor: pointer;
 
+        &:hover {
+            background-color: #89BCD91F;
+        }
     }
 }
 
 
 @media (max-width:1024px) {
-.contact-wrapper{
-    max-width: 442px;
-    
-}
+    .contact-wrapper{
+        max-width: 442px;
+    }
 
-h2{
-    margin-bottom: 30px;
-}
+    h2{
+        margin-bottom: 30px;
+    }
 
     .contact-content{
         width: auto;
@@ -299,7 +327,19 @@ h2{
         flex-direction: column-reverse;
         align-items: flex-start;
     }
-    
+
+    .contact-mobile-heading {
+        display: block;
+        font-family: 'Josefin Sans', sans-serif;
+        font-weight: 600;
+        color: #89BCD9;
+        font-size: 24px;
+        margin: 0 0 15px 0;
+        padding: 0;
+        text-align: center;
+        width: 100%;
+    }
+
     .contact-inputNameEmail{
         flex-direction: column;
         align-items: center;
@@ -322,10 +362,11 @@ h2{
         p{
             display: none;
         }
-       
     }
+
     .inputFieldText{
         width: 337px;
+        box-sizing: border-box;
     }
 
     .contact-text {
@@ -336,11 +377,43 @@ h2{
     .inputFieldName,
     .inputFieldEmail {
         width: 337px;
+        box-sizing: border-box;
     }
 
     .contact-privacyChoice{
         margin-top: 25px;
         gap: 10px;
     }
+}
 
+@media (max-width: 389px) {
+    .contact-wrapper{
+        max-width: 315px;
+        align-items: flex-start;
+    }
+
+    h2{
+        text-align: center;
+        width: 100%;
+    }
+
+    .contact-mobile-heading {
+        text-align: center;
+        width: 100%;
+    }
+
+    .contact-inputNameEmail {
+        width: 100%;
+    }
+
+    .inputFieldName,
+    .inputFieldEmail,
+    .inputFieldText {
+        width: 315px;
+        box-sizing: border-box;
+    }
+
+    .contact-text {
+        max-width: 315px;
+    }
 }
