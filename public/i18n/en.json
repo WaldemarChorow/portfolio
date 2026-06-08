@@ -72,7 +72,10 @@
     "privacy": "I've read the",
     "privacy_link": "privacy policy",
     "privacy_end": "and agree to the processing of my data as outlined.",
-    "send": "Send"
+    "send": "Send",
+    "sending": "Sending…",
+    "send_success": "Thanks! Your message has been sent.",
+    "send_error": "Sending failed. Please try again later."
   },
   "footer": {
     "imprint": "Imprint",

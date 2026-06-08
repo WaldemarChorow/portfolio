@@ -74,12 +74,17 @@
       </div>
 
       <div class="contactSend-btn-section">
+        @if (sendStatus() === 'success') {
+          <p class="send-msg send-success">{{ 'contact.send_success' | translate }}</p>
+        } @else if (sendStatus() === 'error') {
+          <p class="send-msg send-error">{{ 'contact.send_error' | translate }}</p>
+        }
         <button
           class="contactSend-btn"
           type="submit"
           [class.active]="form.valid"
-          [disabled]="form.invalid"
-        >{{ 'contact.send' | translate }}</button>
+          [disabled]="form.invalid || sendStatus() === 'sending'"
+        >{{ (sendStatus() === 'sending' ? 'contact.sending' : 'contact.send') | translate }}</button>
       </div>
     </form>
 

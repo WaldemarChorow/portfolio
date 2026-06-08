@@ -72,7 +72,10 @@
     "privacy": "Ich habe die",
     "privacy_link": "Datenschutzerklärung",
     "privacy_end": "gelesen und stimme der Verarbeitung meiner Daten wie beschrieben zu.",
-    "send": "Senden"
+    "send": "Senden",
+    "sending": "Wird gesendet…",
+    "send_success": "Danke! Ihre Nachricht wurde gesendet.",
+    "send_error": "Senden fehlgeschlagen. Bitte später erneut versuchen."
   },
   "footer": {
     "imprint": "Impressum",

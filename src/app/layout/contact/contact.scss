@@ -157,7 +157,7 @@ a {
 }
 
 .contact-form {
-    @include flex-center-center;
+    @include flex-center-column;
     width: 100%;
 }
 
@@ -331,7 +331,22 @@ p {
     display: flex;
     justify-content: flex-end;
     align-items: center;
+    gap: 20px;
     margin-top: 25px;
+}
+
+.send-msg {
+    font-size: 14px;
+    margin: 0;
+    padding: 0;
+
+    &.send-success {
+        color: #89BCD9;
+    }
+
+    &.send-error {
+        color: #E44C36 !important;
+    }
 }
 
 .contactSend-btn {
@@ -392,9 +407,9 @@ p {
     }
 
     .contact-form {
-        @include flex-center-center;
+        @include flex-center-column;
 
-        p {
+        .field-label {
             display: none;
         }
     }
