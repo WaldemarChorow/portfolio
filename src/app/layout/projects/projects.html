@@ -1,6 +1,6 @@
 <section class="projectsSection" id="projects">
   <div class="projectsSection-wrapper">
-    <h2>{{ 'projects.title' | translate }}</h2>
+    <h2 data-aos="fade-right">{{ 'projects.title' | translate }}</h2>
     <div class="projectTabs">
       @for (project of projects; track project.image; let i = $index) {
         <button class="tabBtn" [class.active]="activeIndex === i" (click)="setActive(i)">
@@ -52,6 +52,7 @@
         </div>
         <img
           class="projectImage"
+          data-aos="zoom-in-up"
           [src]="projects[activeIndex].image"
           [alt]="getProjectKey(activeIndex, 'name') | translate"
         />

@@ -1,6 +1,7 @@
-import { Component, signal } from '@angular/core';
+import { AfterViewInit, Component, signal } from '@angular/core';
 import { RouterOutlet, Router, NavigationEnd } from '@angular/router';
 import { filter } from 'rxjs';
+import AOS from 'aos';
 import { Header } from './layout/header/header';
 import { Navbar } from './layout/navbar/navbar';
 import { AboutMe } from './layout/about-me/about-me';
@@ -16,7 +17,7 @@ import { Footer } from './layout/footer/footer';
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
-export class App {
+export class App implements AfterViewInit {
   protected readonly title = signal('portfolio');
   isHome = signal(true);
 
@@ -28,5 +29,12 @@ export class App {
         const url = (e as NavigationEnd).urlAfterRedirects;
         this.isHome.set(url === '' || url === '/');
       });
+  }
+
+  ngAfterViewInit(): void {
+    AOS.init({
+      duration: 800,
+      once: true,
+    });
   }
 }

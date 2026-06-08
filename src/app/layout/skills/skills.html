@@ -1,10 +1,10 @@
 <section class="mySkillsSection" id="skills">
   <div class="mySkillsSection-wrapper">
-    <h2>{{ 'skills.title' | translate }}</h2>
+    <h2 data-aos="fade-right">{{ 'skills.title' | translate }}</h2>
     <div class="skillsContent">
       <div class="skillsImages">
         @for (skill of skills; track skill.alt){
-          <figure>
+          <figure data-aos="flip-left">
             <img [src]="skill.src" [alt]="skill.alt">
             <figcaption>{{ skill.alt }}</figcaption>
           </figure>

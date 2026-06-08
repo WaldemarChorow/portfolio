@@ -4,7 +4,7 @@
     <p class="ref-subtitle">{{ 'references.subtitle' | translate }}</p>
     <div class="references-content">
       @for (reference of references; track reference.id) {
-        <div class="reference-single">
+        <div class="reference-single" data-aos="zoom-out">
           <h3>{{ reference.name }}</h3>
           <p>
             {{ 'references.project' | translate }}<span> {{ reference.project }}</span>
