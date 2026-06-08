@@ -1,6 +1,6 @@
 <nav [class.subpage]="!isHome">
     <div class="nav-wrapper">
-        <div class="logo"></div>
+        <div class="logo" (click)="scroll.scrollToTop()"></div>
         <ul class="nav-menu">
             <li><a (click)="scroll.scrollTo('whyme')">{{ 'nav.whyme' | translate }}</a></li>
             <li><a (click)="scroll.scrollTo('skills')">{{ 'nav.skills' | translate }}</a></li>

@@ -20,6 +20,22 @@ export class ScrollService {
     }
   }
 
+  scrollToTop(): void {
+    const isHome = this.router.url === '/' || this.router.url === '';
+
+    if (isHome) {
+      this.doScrollToTop();
+    } else {
+      this.router.navigate(['/']).then(() => {
+        setTimeout(() => this.doScrollToTop(), 100);
+      });
+    }
+  }
+
+  private doScrollToTop(): void {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
   private doScroll(sectionId: string): void {
     const element = document.getElementById(sectionId);
     if (!element) return;

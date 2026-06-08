@@ -20,7 +20,7 @@
       </div>
     </div>
 
-    <div class="contact-form">
+    <form class="contact-form" [formGroup]="form" (ngSubmit)="onSubmit()">
       <div class="contact-inputNameEmail">
 
         <div class="inputFieldName-section">
@@ -28,63 +28,60 @@
           <p class="field-label">{{ 'contact.name_label' | translate }}</p>
           <input
             class="inputFieldName"
-            [class.error]="nameError"
-            [class.success]="nameSuccess"
+            [class.error]="showError(name)"
+            [class.success]="showSuccess(name)"
             type="text"
             [placeholder]="'contact.name_placeholder' | translate"
-            [(ngModel)]="name"
-            (blur)="nameTouched.set(true)"
+            formControlName="name"
           >
-          @if (nameError) { <p class="error-msg">{{ 'contact.error_name' | translate }}</p> }
+          @if (showError(name)) { <p class="error-msg">{{ 'contact.error_name' | translate }}</p> }
         </div>
 
         <div class="inputFieldEmail-section">
           <p class="field-label">{{ 'contact.email_label' | translate }}</p>
           <input
             class="inputFieldEmail"
-            [class.error]="emailError"
-            [class.success]="emailSuccess"
+            [class.error]="showError(email)"
+            [class.success]="showSuccess(email)"
             type="text"
             [placeholder]="'contact.email_placeholder' | translate"
-            [(ngModel)]="email"
-            (blur)="emailTouched.set(true)"
+            formControlName="email"
           >
-          @if (emailError) { <p class="error-msg">{{ 'contact.error_email' | translate }}</p> }
+          @if (showError(email)) { <p class="error-msg">{{ 'contact.error_email' | translate }}</p> }
         </div>
 
       </div>
-    </div>
 
-    <div class="inputFieldText-section">
-      <p class="field-label">{{ 'contact.message_label' | translate }}</p>
-      <textarea
-        class="inputFieldText"
-        [class.error]="messageError"
-        [class.success]="messageSuccess"
-        [placeholder]="'contact.message_placeholder' | translate"
-        [(ngModel)]="message"
-        (blur)="messageTouched.set(true)"
-      ></textarea>
-      @if (messageError) { <p class="error-msg">{{ 'contact.error_message' | translate }}</p> }
-    </div>
+      <div class="inputFieldText-section">
+        <p class="field-label">{{ 'contact.message_label' | translate }}</p>
+        <textarea
+          class="inputFieldText"
+          [class.error]="showError(message)"
+          [class.success]="showSuccess(message)"
+          [placeholder]="'contact.message_placeholder' | translate"
+          formControlName="message"
+        ></textarea>
+        @if (showError(message)) { <p class="error-msg">{{ 'contact.error_message' | translate }}</p> }
+      </div>
 
-    <div class="contact-privacyChoice" [class.error]="submitted() && !privacyAccepted()">
-      <div
-        class="contact-privacyChoiceIcon"
-        [class.checked]="privacyAccepted()"
-        (click)="togglePrivacy()"
-      ></div>
-      <p>{{ 'contact.privacy' | translate }} <span>{{ 'contact.privacy_link' | translate }}</span> {{ 'contact.privacy_end' | translate }}</p>
-    </div>
+      <div class="contact-privacyChoice" [class.error]="showError(privacyAccepted)">
+        <div
+          class="contact-privacyChoiceIcon"
+          [class.checked]="privacyAccepted.value"
+          (click)="togglePrivacy()"
+        ></div>
+        <p>{{ 'contact.privacy' | translate }} <span>{{ 'contact.privacy_link' | translate }}</span> {{ 'contact.privacy_end' | translate }}</p>
+      </div>
 
-    <div class="contactSend-btn-section">
-      <button
-        class="contactSend-btn"
-        [class.active]="formValid"
-        [disabled]="!formValid"
-        (click)="onSubmit()"
-      >{{ 'contact.send' | translate }}</button>
-    </div>
+      <div class="contactSend-btn-section">
+        <button
+          class="contactSend-btn"
+          type="submit"
+          [class.active]="form.valid"
+          [disabled]="form.invalid"
+        >{{ 'contact.send' | translate }}</button>
+      </div>
+    </form>
 
     <div class="scroll-top-mobile">
       <a class="scroll-top-btn" (click)="scrollToTop()"></a>

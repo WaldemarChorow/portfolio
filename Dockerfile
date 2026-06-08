@@ -20,4 +20,4 @@ COPY --from=builder /app/dist/portfolio/browser ./dist
 
 EXPOSE 3001
 
-CMD ["http-server", "dist", "-p", "3001", "-c-1"]
+CMD ["http-server", "dist", "-p", "3001", "-c-1", "--proxy", "http://localhost:3001?"]
