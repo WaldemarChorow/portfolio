@@ -68,6 +68,8 @@ h4 {
 .reference-single {
     width: 400px;
     height: 400px;
+    // Innenabstand so, dass der Inhalt im runden Shape bleibt.
+    padding: 70px 55px;
     display: flex;
     @include flex-center-column;
     background-image: url(/assets/images/shape-ref-default.svg);
@@ -109,15 +111,34 @@ span {
 }
 
 .reference-text {
-    width: 290px;
-    height: 120px;
+    width: 100%;
+    // Text scrollt innerhalb des Shapes, falls er zu lang ist – die Karte
+    // behält ihre feste Grösse und das runde Shape bleibt intakt.
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
     font-family: 'Josefin Sans', sans-serif;
     font-weight: 400;
     color: #F8F5EC;
-    font-size: 18px;
-    padding: 0;
-    margin-top: 20px;
+    font-size: 16px;
+    line-height: 1.4;
+    padding: 0 6px;
+    margin-top: 15px;
+    margin-bottom: 15px;
     text-align: center;
+
+    // schmale, dezente Scrollbar innerhalb der Karte
+    scrollbar-width: thin;
+    scrollbar-color: #89BCD9 transparent;
+
+    &::-webkit-scrollbar {
+        width: 5px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: #89BCD9;
+        border-radius: 10px;
+    }
 }
 
 a {
@@ -137,12 +158,13 @@ a {
 
 @media (max-width: 1024px){
     .reference-single{
-        align-items: flex-start;
-        padding-left: 50px;
+        align-items: center;
+        padding: 45px 40px;
         width: 290px;
         height: 290px;
         margin-left: 20px;
         background-image: url(/assets/images/ref-bg-mobile.svg);
+        background-size: contain;
 
         &:hover {
             background-image: url(/assets/images/ref-bg-mobile.svg);

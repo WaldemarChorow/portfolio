@@ -266,11 +266,24 @@ a {
     color: #E44C36;
 }
 
+// Die Fehlermeldung hängt direkt (im Fluss) unter dem Feld. Damit beim
+// Ein-/Ausblenden nichts springt, reserviert jede Feld-Sektion dezent Platz
+// für genau eine Fehlerzeile über min-height (Feldhöhe + ~20px).
+.inputFieldName-section,
+.inputFieldEmail-section {
+    min-height: 92px;
+}
+
+.inputFieldText-section {
+    min-height: 182px;
+}
+
 .error-msg {
     color: #E44C36 !important;
     padding-left: 25px;
     font-size: 13px;
     margin-top: 4px;
+    margin-bottom: 0;
 }
 
 .contact-privacyChoice.error p {
@@ -417,12 +430,27 @@ p {
     .inputFieldText-section {
         width: 100%;
         display: flex;
+        flex-direction: column;
         align-items: center;
         justify-content: center;
 
-        p {
+        // Nur das Feld-Label ausblenden – die Fehlermeldung (.error-msg) ist
+        // ebenfalls ein <p> und muss sichtbar bleiben.
+        p.field-label {
             display: none;
         }
+    }
+
+    // Alle Fehlermeldungen sind mobil einzeilig – knappe Reserve (Feldhöhe 60px
+    // + eine Fehlerzeile), damit der Abstand minimal bleibt und nichts springt.
+    .inputFieldName-section,
+    .inputFieldEmail-section {
+        min-height: 84px;
+    }
+
+    // Message: Textarea 146px + eine Fehlerzeile.
+    .inputFieldText-section {
+        min-height: 167px;
     }
 
     .inputFieldText {
