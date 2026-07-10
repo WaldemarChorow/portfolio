@@ -239,6 +239,32 @@ p {
     }
 }
 
+// Ultra-Wide: ab 1600px den Hero vertikal zentrieren, damit der Inhalt nicht
+// am unteren Rand klebt.
+@media (min-width: 1600px) {
+    header {
+        justify-content: center;
+    }
+
+    .foto-section {
+        .foto-section-bg {
+            bottom: 15px;
+            transform: rotate(0deg);
+        }
+
+        img {
+            bottom: 0px;
+            width: 570px;
+            max-width: 570px;
+            -webkit-mask-image: url(/assets/images/shape.svg);
+            mask-image: url(/assets/images/shape.svg);
+            mask-size: 97% 100%;
+            mask-repeat: no-repeat;
+            mask-position: center bottom;
+        }
+    }
+}
+
 @media (max-width: 1380px) {
 
     h1{

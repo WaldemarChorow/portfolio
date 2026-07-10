@@ -33,6 +33,11 @@ html {
   width: 100%;
   max-width: 100%;
   overflow-x: hidden;
+  // Reserviert dauerhaft Platz für die vertikale Scrollbar. In Chrome/Firefox
+  // (classic scrollbars) verhindert das den horizontalen Layout-Sprung, wenn
+  // die Scrollbar je nach Seiten-/Inhaltshöhe erscheint oder verschwindet.
+  // Safari nutzt Overlay-Scrollbars und ist davon ohnehin nicht betroffen.
+  scrollbar-gutter: stable;
 }
 
 body {

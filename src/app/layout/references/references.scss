@@ -40,26 +40,29 @@ h4 {
     width: 100%;
     max-width: 1300px;
     padding-bottom: 10px;
+    // Reserviert dauerhaft die Höhe der horizontalen Scrollbar, damit der
+    // darunterliegende Inhalt beim Klick/Hover (Chrome zeigt die Scrollbar
+    // erst dann) nicht nach unten springt.
+    scrollbar-gutter: stable;
 
     .reference-single {
         flex-shrink: 0;
     }
 
-    &:hover {
-        &::-webkit-scrollbar {
-            height: 6px;
-        }
-
-        &::-webkit-scrollbar-track {
-            background: #2D383F;
-        }
-
-        &::-webkit-scrollbar-thumb {
-            background: #89BCD9;
-            border-radius: 10px;
-        }
+    // Scrollbar dauerhaft (nicht nur bei :hover) mit fester Höhe stylen –
+    // ein wechselnder Zustand würde die Container-Höhe verändern.
+    &::-webkit-scrollbar {
+        height: 6px;
     }
 
+    &::-webkit-scrollbar-track {
+        background: #2D383F;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: #89BCD9;
+        border-radius: 10px;
+    }
 }
 
 .reference-single {

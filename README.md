@@ -54,6 +54,28 @@ ng e2e
 
 Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
 
+## Contact form backend
+
+The contact form ([`src/app/layout/contact/contact.ts`](src/app/layout/contact/contact.ts))
+sends a `POST` request to the relative endpoint **`/api/contact`**. The frontend
+is fully wired up (validation, loading/success/error states), but **no backend is
+included in this repo** — you must provide one on your server.
+
+The endpoint receives a JSON body:
+
+```json
+{
+  "name": "…",
+  "email": "…",
+  "message": "…"
+}
+```
+
+It should return HTTP `2xx` on success (shows the success message) and any error
+status otherwise (shows the error message). During local development you can point
+`/api/contact` at your backend via an Angular
+[proxy configuration](https://angular.dev/tools/cli/serve#proxying-to-a-backend-server).
+
 ## Additional Resources
 
 For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
