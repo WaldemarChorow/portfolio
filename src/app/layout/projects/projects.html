@@ -4,7 +4,7 @@
     <div class="projectTabs">
       @for (project of projects; track project.image; let i = $index) {
         <button class="tabBtn" [class.active]="activeIndex === i" (click)="setActive(i)">
-          {{ i + 1 }}. {{ 'projects.tab' | translate }}
+          {{ getProjectKey(i, 'name') | translate }}
         </button>
       }
     </div>

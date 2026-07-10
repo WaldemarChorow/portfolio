@@ -35,8 +35,8 @@ export class Projects {
         { src: '/assets/icons/typescript.svg', alt: 'TypeScript' },
         { src: '/assets/icons/HTML.svg', alt: 'HTML' },
       ],
-      liveLink: '#',
-      githubLink: '#',
+      liveLink: 'https://join.waldemar-chorow.de',
+      githubLink: 'https://github.com/WaldemarChorow/join',
       image: '/assets/images/projects/join.svg',
     },
     {
