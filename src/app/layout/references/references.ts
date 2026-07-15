@@ -32,5 +32,21 @@ export class References {
         'Er nimmt neue Informationen sehr schnell auf und wendet sie direkt in der Praxis an.',
       linkedInLink: 'https://www.linkedin.com/in/ievgen-bilion-434377192/',
     },
+    {
+      id: 3,
+      name: 'Roger Fiebus',
+      project: 'Kochwelt',
+      text:
+        'Ich habe mit Waldemar im Rahmen einer Gruppenarbeit während der Developer Akademie . ' +
+        'zusammengearbeitet und ihn als sehr angenehmen, zuverlässigen und teamorientierten Kollegen, ' +
+        'erlebt.' +
+        'Waldemar bringt sich ruhig, konzentriert und lösungsorientiert in die gemeinsame Arbeit ein.' +
+        'geht Aufgaben gewissenhaft an, bleibt auch bei Rückfragen oder technischen Herausforderungen' +
+        'konstruktiv und ist offen für Austausch im Team. Besonders positiv war für mich seine verlässliche' +
+        'Art in der Zusammenarbeit.' +
+        'Ich kann Waldemar als engagierten und lernbereiten Entwickler empfehlen, der sich gut in ein Team'+
+        'einfügt und bereit ist, Verantwortung für seine Aufgaben zu übernehmen.',
+      linkedInLink: '',
+    },
   ];
 }

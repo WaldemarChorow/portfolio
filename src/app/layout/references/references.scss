@@ -40,17 +40,12 @@ h4 {
     width: 100%;
     max-width: 1300px;
     padding-bottom: 10px;
-    // Reserviert dauerhaft die Höhe der horizontalen Scrollbar, damit der
-    // darunterliegende Inhalt beim Klick/Hover (Chrome zeigt die Scrollbar
-    // erst dann) nicht nach unten springt.
     scrollbar-gutter: stable;
 
     .reference-single {
         flex-shrink: 0;
     }
 
-    // Scrollbar dauerhaft (nicht nur bei :hover) mit fester Höhe stylen –
-    // ein wechselnder Zustand würde die Container-Höhe verändern.
     &::-webkit-scrollbar {
         height: 6px;
     }
@@ -112,8 +107,6 @@ span {
 
 .reference-text {
     width: 100%;
-    // Text scrollt innerhalb des Shapes, falls er zu lang ist – die Karte
-    // behält ihre feste Grösse und das runde Shape bleibt intakt.
     flex: 1;
     min-height: 0;
     overflow-y: auto;
@@ -125,9 +118,9 @@ span {
     padding: 0 6px;
     margin-top: 15px;
     margin-bottom: 15px;
-    text-align: center;
+    text-align: start;
 
-    // schmale, dezente Scrollbar innerhalb der Karte
+
     scrollbar-width: thin;
     scrollbar-color: #89BCD9 transparent;
 
