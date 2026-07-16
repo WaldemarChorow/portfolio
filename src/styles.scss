@@ -1,3 +1,4 @@
+@use './app/abstract/mixins' as *;
 @import 'aos/dist/aos.css';
 
 @font-face {
@@ -20,8 +21,6 @@
   font-weight: bold;
   font-style: normal;
 }
-
-@import './app/abstract/mixins.scss';
 
 *,
 *::before,

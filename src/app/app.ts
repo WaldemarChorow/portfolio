@@ -33,8 +33,9 @@ export class App implements AfterViewInit {
 
   ngAfterViewInit(): void {
     AOS.init({
-      duration: 800,
+      duration: 1000,
       once: true,
+      offset: 300,
     });
   }
 }

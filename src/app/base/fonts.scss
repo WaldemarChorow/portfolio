@@ -1,4 +1,4 @@
-@import '../abstract/mixins.scss';
+@use '../abstract/mixins' as *;
 
 @mixin h1 {
   font-family: 'Anta', sans-serif;

@@ -1,5 +1,5 @@
-@import '../../abstract/mixins.scss';
-@import '../../base/fonts.scss';
+@use '../../abstract/mixins' as *;
+@use '../../base/fonts' as *;
 
 
 .reference-MainSection {
@@ -10,7 +10,7 @@
 .ref-sec-wrapper {
     max-width: 1440px;
     @include flex-center-column;
-    align-items: flex-start;
+    align-items: center;
     @include margin-top-bottom;
     @include page-gutter;
     margin-bottom: 0;
@@ -63,7 +63,6 @@ h4 {
 .reference-single {
     width: 400px;
     height: 400px;
-    // Innenabstand so, dass der Inhalt im runden Shape bleibt.
     padding: 70px 55px;
     display: flex;
     @include flex-center-column;
@@ -166,6 +165,7 @@ a {
 
     .ref-sec-wrapper{
         padding: 0;
+        align-items: flex-start;
     }
 
     .references-content{

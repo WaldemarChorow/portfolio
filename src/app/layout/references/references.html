@@ -9,8 +9,10 @@
           <p>
             {{ 'references.project' | translate }}<span> {{ reference.project }}</span>
           </p>
-          <p class="reference-text">{{ reference.text }}</p>
-          <a [href]="reference.linkedInLink" target="_blank" rel="noopener">LinkedIn</a>
+          <p class="reference-text">{{ reference.text[currentLanguage] }}</p>
+          @if (reference.linkedInLink) {
+            <a [href]="reference.linkedInLink" target="_blank" rel="noopener">LinkedIn</a>
+          }
         </div>
       }
     </div>
